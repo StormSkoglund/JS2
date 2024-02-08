@@ -11859,10 +11859,16 @@ textarea.form-control-lg {
   box-shadow: 2px 12px 4.4px 0px #332348;
 }
 
-.my-border {
-  border-radius: 58px;
+@media (min-width: 576px) {
+  .my-md-border {
+    border-radius: 58px;
+  }
 }
-
+@media (min-width: 576px) {
+  .my-sm-border {
+    border-radius: 5px;
+  }
+}
 .my-form {
   padding: 1.5rem;
   border: solid;

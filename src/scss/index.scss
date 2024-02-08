@@ -25,8 +25,16 @@ $color: #332348;
 $border-radius1: 58px;
 $border-radius2: 5px;
 
-.my-border {
-  border-radius: $border-radius1;
+@include media-breakpoint-up(sm) {
+  .my-md-border {
+    border-radius: $border-radius1;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .my-sm-border {
+    border-radius: $border-radius2;
+  }
 }
 
 $form-border: 5px;
