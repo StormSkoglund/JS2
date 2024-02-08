@@ -1,0 +1,54 @@
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "variables";
+@import "variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+// bootstrap import
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// custom modifications
+
+$shadow1: 2px;
+$shadow2: 12px;
+$shadow3: 4.4px;
+$shadow4: 0px;
+$color: #332348;
+
+.box-shadow {
+  box-shadow: $shadow1 $shadow2 $shadow3 $shadow4 $color;
+}
+
+$border-radius1: 58px;
+$border-radius2: 5px;
+
+.my-border {
+  border-radius: $border-radius1;
+}
+
+$form-border: 5px;
+$form-size: 1.5rem;
+$form-border-thickness: 3px;
+$form-type: solid;
+$form-border-color: #3590d2;
+
+.my-form {
+  padding: $form-size;
+  border: $form-type;
+  border-width: $form-border-thickness;
+  border-color: $form-border-color;
+  border-radius: $border-radius2;
+}
+
+$form-size-min: 0.5rem;
+
+.my-form-min {
+  padding: $form-size-min;
+  border: $form-type;
+  border-width: $form-border-thickness;
+  border-color: $form-border-color;
+  border-radius: $border-radius2;
+}
