@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap-ca",
+  "name": "js2",
   "version": "0.0.1",
-  "description": "A course assignment in css frameworks. I am building a simple social media page.",
+  "description": "A course assignment in JavaScript, I am adding functionality to a social media website.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StormSkoglund/css-frameworks-ca.git"
+    "url": "git+https://github.com/StormSkoglund/JS2.git"
   },
   "keywords": [
     "css",
