@@ -54,33 +54,50 @@
       >
         <h1 class="display-6">Login</h1>
         <form class="form-group" action="/profile/index.html">
-          <label for="email">Email address</label>
-          <input
-            type="email"
-            class="my-form d-flex align-items-end form-control"
-            id="email"
-            pattern="[^@\s]+@[^@\s]+"
-            title="Invalid email address"
-            required
-          />
-          <label for="mediaPassword">Password</label>
-          <input
-            type="password"
-            class="my-form d-flex align-items-end form-control"
-            id="mediaPassword"
-            placeholder="Enter password"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="For security reasons, your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
-            required
-          />
-          <img
-            src="images/MusicAI_1-min.png"
-            alt="Two male musicians, playing side by side on stage"
-            class="d-none d-lg-block col-lg-8 mx-auto img-fluid float-end"
-          />
+          <div>
+            <label for="userName">Enter username</label>
+            <input
+              class="my-form d-flex align-items-end form-control"
+              type="text"
+              id="userName"
+              name="userName"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div>
+            <label for="inputMail">Email</label>
+            <input
+              type="email"
+              class="my-form d-flex align-items-end form-control"
+              id="inputMail"
+              name="inputMail"
+              pattern="[^@\s]+@[^@\s]+"
+              title="Invalid email address"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div>
+            <label for="inputPass">Password</label>
+            <input
+              type="password"
+              class="my-form d-flex align-items-end form-control"
+              id="inputPass"
+              name="inputPass"
+              placeholder="Enter password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="For security reasons, your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+              autocomplete="new-password"
+              required
+            />
+          </div>
+
           <button
-            class="btn btn-info m-2 text-white fw-bold float-start"
+            class="btn btn-info m-2 text-white fw-bold d-flex float-center float-md-end"
             type="submit"
+            id="formButton"
+            name="formButton"
           >
             ENTER
           </button>

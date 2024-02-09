@@ -21,6 +21,9 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script type="module" defer src="/JavaScript/register.js"></script>
+    <script type="module" src="/JavaScript/modules/inputs.mjs"></script>
+
     <title>Musync | Register User</title>
   </head>
   <body class="bg-secondary m-0">
@@ -42,30 +45,51 @@
         </h1>
         <h2 class="fs-5 text-center">Create new account</h2>
 
-        <form class="form-group" action="/profile/index.html">
-          <label for="email">Email address</label>
-          <input
-            type="email"
-            class="my-form d-flex align-items-end form-control"
-            id="email"
-            pattern="[^@\s]+@[^@\s]+"
-            title="Invalid email address"
-            required
-          />
-          <label for="mediaPassword">Password</label>
-          <input
-            type="password"
-            class="my-form d-flex align-items-end form-control"
-            id="mediaPassword"
-            placeholder="Enter password"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="For security reasons, your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
-            required
-          />
+        <form class="form-group" action="../index.html">
+          <div>
+            <label for="userName">Choose a username</label>
+            <input
+              class="my-form d-flex align-items-end form-control"
+              type="text"
+              id="userName"
+              name="userName"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div>
+            <label for="inputMail">Email</label>
+            <input
+              type="email"
+              class="my-form d-flex align-items-end form-control"
+              id="inputMail"
+              name="inputMail"
+              pattern="[^@\s]+@[^@\s]+"
+              title="Invalid email address"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div>
+            <label for="inputPass">Choose a strong password</label>
+            <input
+              type="password"
+              class="my-form d-flex align-items-end form-control"
+              id="inputPass"
+              name="inputPass"
+              placeholder="Enter password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="For security reasons, your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+              autocomplete="new-password"
+              required
+            />
+          </div>
 
           <button
             class="btn btn-info m-2 text-white fw-bold d-flex float-center float-md-end"
             type="submit"
+            id="formButton"
+            name="formButton"
           >
             ENTER
           </button>
