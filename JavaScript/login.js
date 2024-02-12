@@ -21,11 +21,6 @@ async function loginUser(url, data) {
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
     console.log(json);
-    // Logs:
-    // accessToken: "eyJhbGciOiJIuzI1NiIsInR...
-    // avatar: ""
-    // email: "test-account-a@noroff.no
-    // name: "test_account_a"
     return json;
   } catch (error) {
     console.log(error);

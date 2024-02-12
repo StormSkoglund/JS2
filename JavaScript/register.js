@@ -3,8 +3,10 @@ import {
   userInputName,
   userMail,
   userPassword,
-  formBtn,
+  form,
 } from "./modules/inputs.mjs";
+
+import { tryCatchError } from "./modules/error.mjs";
 
 async function registerUser(url, data) {
   try {
@@ -18,11 +20,16 @@ async function registerUser(url, data) {
 
     const response = await fetch(url, postData);
     console.log(response);
+    if (!response.ok) {
+      throw new Error(
+        "Registration failed. The email address and/or account name provided may be registered already."
+      );
+    }
     const json = await response.json();
     console.log(json);
     return json;
   } catch (error) {
-    console.log(error);
+    tryCatchError(error.message);
   }
 }
 
@@ -42,4 +49,15 @@ function getInputs() {
   registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
 }
 
-formBtn.addEventListener("click", getInputs);
+function preventFormRefresh(event) {
+  event.preventDefault();
+}
+form.addEventListener("submit", getInputs);
+form.addEventListener("submit", preventFormRefresh);
+//redirect to login page
+
+//if (getInputs.ok) {
+//  {
+//    window.location.href = "profile/index.html";
+//  }
+//}

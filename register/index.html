@@ -23,6 +23,7 @@
     ></script>
     <script type="module" defer src="/JavaScript/register.js"></script>
     <script type="module" src="/JavaScript/modules/inputs.mjs"></script>
+    <script type="module" src="/JavaScript/modules/error.mjs"></script>
 
     <title>Musync | Register User</title>
   </head>
@@ -45,7 +46,7 @@
         </h1>
         <h2 class="fs-5 text-center">Create new account</h2>
 
-        <form class="form-group" action="../index.html">
+        <form id="form" class="form-group">
           <div>
             <label for="userName">Choose a username</label>
             <input
@@ -94,6 +95,10 @@
             ENTER
           </button>
         </form>
+        <div
+          class="text-center text-danger bg-white m-3"
+          id="errorContainer"
+        ></div>
       </section>
     </div>
     <footer
