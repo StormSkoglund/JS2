@@ -25,6 +25,12 @@ async function registerUser(url, data) {
         "Registration failed. The email address and/or account name provided may be registered already."
       );
     }
+    if (response.ok) {
+      //redirect to login page
+      {
+        window.location.href = "/index.html";
+      }
+    }
     const json = await response.json();
     console.log(json);
     return json;
@@ -33,7 +39,7 @@ async function registerUser(url, data) {
   }
 }
 
-//Getting user inputs from forms, Stack Overflow (2012) How do I get the value of text input field using JavaScript? [Online] Available at: 1 (Accessed: 6 February 2024).
+//Getting user inputs from forms, Stack Overflow (2012) How do I get the value of text input field using JavaScript? (Accessed: 6 February 2024).
 
 function getInputs() {
   const nameValue = userInputName.value;
@@ -48,16 +54,9 @@ function getInputs() {
   console.log(user);
   registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
 }
-
+// addEventListener Two Functions (2024) . [Online] available at Stack Overflow https://stackoverflow.com/questions/25028853/addeventlistener-two-functions (Accessed: 12 February 2024).
 function preventFormRefresh(event) {
   event.preventDefault();
 }
 form.addEventListener("submit", getInputs);
 form.addEventListener("submit", preventFormRefresh);
-//redirect to login page
-
-//if (getInputs.ok) {
-//  {
-//    window.location.href = "profile/index.html";
-//  }
-//}
