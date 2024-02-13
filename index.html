@@ -28,14 +28,14 @@
       class="container d-flex flex-column flex-lg-row justify-content-between min-vh-100"
     >
       <div
-        class="card h-75 h-l-50 mw-50 bg-primary m-3 box-shadow my-border p-2"
+        class="card h-sm-75 h-lg-50 col-12 col-md-12 col-lg-5 bg-primary m-auto m-md-3 box-shadow my-border p-2"
       >
         <img
           src="images/_musync_.png"
           class="mx-auto mt-3 mb-3 col-10"
           alt="The logo of this site it spells musync"
         />
-        <p class="d-none d-sm-block text-center fw-bolder lead">
+        <p class="text-center fw-bolder lead">
           Musicians' collaboration platform. Find like-minded musicians. Join
           now.
         </p>
@@ -50,7 +50,7 @@
       </div>
       <!-- login -->
       <div
-        class="p-3 card h-75 h-l-50 mw-50 bg-primary m-sm-3 box-shadow my-border"
+        class="p-3 card h-auto col-12 col-md-12 col-lg-8 bg-primary m-auto m-md-3 box-shadow my-border"
       >
         <h1 class="display-6">Login</h1>
         <form class="form-group" action="/profile/index.html">
@@ -72,7 +72,8 @@
               class="my-form d-flex align-items-end form-control"
               id="inputMail"
               name="inputMail"
-              pattern="[^@\s]+@[^@\s]+"
+              pattern="^[a-z0-9._%+-]+@(stud\.noroff\.no|noroff\.no)$"
+              placeholder="example@noroff.no or example@stud.noroff.no"
               title="Invalid email address"
               autocomplete="email"
               required
@@ -101,6 +102,11 @@
           >
             ENTER
           </button>
+          <img
+            src="images/MusicAI_1-min.png"
+            alt="Two male musicians, playing side by side on stage"
+            class="d-none d-lg-block col-lg-6 float-end"
+          />
         </form>
         <div>
           <a
