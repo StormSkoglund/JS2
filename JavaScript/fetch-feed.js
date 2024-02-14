@@ -21,7 +21,7 @@ async function fetchAuthorized(url) {
     console.log(posts);
 
     posts.forEach((post) => {
-      displayFeed.innerHTML += `<article class="card m-2 p-3 "><span class="" ><h6 class="text-center fs-4">${post.title}</h6></span><span><hr/><div><p class="fs-5" >${post.body}</p><p class="fs-6 fw-lighter">Tags: ${post.tags}, </p></span><img href"${post.tags}"></img> </article>`;
+      displayFeed.innerHTML += `<article class="card m-2 p-3 "><span class="" ><h6 class="text-center fs-4">${post.title}</h6></span><span><hr/><div><p class="fs-5" >${post.body}</p><p class="fs-6 fw-lighter">Tags: ${post.tags}, </p></span><img class="d-block w-50 m-auto border border-primary" src="${post.media}"></img> </article>`;
     });
   } catch (error) {
     console.log(error);
