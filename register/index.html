@@ -23,6 +23,7 @@
     ></script>
     <script type="module" defer src="/JavaScript/register.js"></script>
     <script type="module" src="/JavaScript/modules/inputs.mjs"></script>
+    <script type="module" src="/JavaScript/modules/norefresh.mjs"></script>
     <script type="module" src="/JavaScript/modules/error.mjs"></script>
 
     <title>Musync | Register User</title>
@@ -65,7 +66,7 @@
               class="my-form d-flex align-items-end form-control"
               id="inputMail"
               name="inputMail"
-              pattern="^[a-z0-9._%+-]+@(stud\.noroff\.no|noroff\.no)$"
+              pattern="^[a-z0-9._%+\-]+@(stud\.noroff\.no|noroff\.no)$"
               placeholder="Example@noroff.no"
               title="Invalid email address"
               autocomplete="email"

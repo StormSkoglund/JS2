@@ -3,8 +3,10 @@ import {
   userInputName,
   userMail,
   userPassword,
-  formBtn,
+  form,
 } from "./modules/inputs.mjs";
+
+import { preventFormRefresh } from "./modules/norefresh.mjs";
 
 async function loginUser(url, data) {
   try {
@@ -17,6 +19,9 @@ async function loginUser(url, data) {
     };
     const response = await fetch(url, postData);
     console.log(response);
+    if (response.ok) {
+      window.location.href = "/profile/index.html";
+    }
     const json = await response.json();
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
@@ -41,4 +46,5 @@ function login() {
   loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, user);
 }
 
-formBtn.addEventListener("click", login);
+form.addEventListener("submit", login);
+form.addEventListener("submit", preventFormRefresh);
