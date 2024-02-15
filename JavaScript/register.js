@@ -22,16 +22,15 @@ async function registerUser(url, data) {
 
     const response = await fetch(url, postData);
     console.log(response);
-    if (!response.ok) {
-      throw new Error(
-        "Registration failed. The email address and/or account name provided may be registered already."
-      );
-    }
     if (response.ok) {
       //redirect to login page
       {
         window.location.href = "/index.html";
       }
+    } else {
+      throw new Error(
+        "Registration failed. The email address and/or account name provided may be registered already."
+      );
     }
     const json = await response.json();
     console.log(json);
@@ -41,7 +40,7 @@ async function registerUser(url, data) {
   }
 }
 
-//Getting user inputs from forms, Stack Overflow (2012) How do I get the value of text input field using JavaScript? (Accessed: 6 February 2024).
+//Getting user inputs from forms, Stack Overflow (2012) How do I get the value of text input field using JavaScript? [online] available at: https://stackoverflow.com/questions/11563638/how-do-i-get-the-value-of-text-input-field-using-javascript (Accessed: 6 February 2024).
 
 function getInputs() {
   const nameValue = userInputName.value;

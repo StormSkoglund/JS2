@@ -55,6 +55,10 @@
               type="text"
               id="userName"
               name="userName"
+              pattern="^[\w]+$"
+              maxlength="20"
+              title="Only lowercase and uppercase letters, numbers
+            and underscores are permitted, for example: User_name321."
               autocomplete="name"
               required
             />
@@ -66,9 +70,9 @@
               class="my-form d-flex align-items-end form-control"
               id="inputMail"
               name="inputMail"
-              pattern="^[a-z0-9._%+\-]+@(stud\.noroff\.no|noroff\.no)$"
-              placeholder="Example@noroff.no"
-              title="Invalid email address"
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              placeholder="example@noroff.no or @stud.noroff.no"
+              title="Only @noroff.no and @stud.noroff.no emails accepted"
               autocomplete="email"
               required
             />
@@ -87,7 +91,6 @@
               required
             />
           </div>
-
           <button
             class="btn btn-info m-2 text-white fw-bold d-flex float-center float-md-end"
             type="submit"
@@ -97,10 +100,7 @@
             ENTER
           </button>
         </form>
-        <div
-          class="text-center text-danger bg-white m-3"
-          id="errorContainer"
-        ></div>
+        <div class="text-center text-danger bg-white" id="errorContainer"></div>
       </section>
     </div>
     <footer

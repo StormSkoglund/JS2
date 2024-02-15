@@ -6,6 +6,8 @@ import {
   form,
 } from "./modules/inputs.mjs";
 
+import { tryCatchError } from "./modules/error.mjs";
+
 import { preventFormRefresh } from "./modules/norefresh.mjs";
 
 async function loginUser(url, data) {
@@ -21,6 +23,8 @@ async function loginUser(url, data) {
     console.log(response);
     if (response.ok) {
       window.location.href = "/profile/index.html";
+    } else {
+      throw new Error("User does not exist.");
     }
     const json = await response.json();
     const accessToken = json.accessToken;
@@ -28,7 +32,7 @@ async function loginUser(url, data) {
     console.log(json);
     return json;
   } catch (error) {
-    console.log(error);
+    tryCatchError(error.message);
   }
 }
 

@@ -24,6 +24,7 @@
     <script defer type="module" src="/JavaScript/login.js"></script>
     <script type="module" src="/JavaScript/modules/inputs.mjs"></script>
     <script type="module" src="/JavaScript/modules/norefresh.mjs"></script>
+    <script type="module" src="/JavaScript/modules/error.mjs"></script>
     <title>Musync | Login</title>
   </head>
   <body class="bg-secondary m-0">
@@ -66,6 +67,10 @@
               type="text"
               id="userName"
               name="userName"
+              pattern="^[\w]+$"
+              maxlength="20"
+              title="Only lowercase and uppercase letters, numbers
+            and underscores are permitted, for example: User_name321."
               autocomplete="name"
               required
             />
@@ -77,9 +82,9 @@
               class="my-form d-flex align-items-end form-control"
               id="inputMail"
               name="inputMail"
-              pattern="^[a-z0-9._%+\-]+@(stud\.noroff\.no|noroff\.no)$"
-              placeholder="example@noroff.no or example@stud.noroff.no"
-              title="Invalid email address"
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              placeholder="example@noroff.no or @stud.noroff.no"
+              title="Only emails from @noroff.no and @stud.noroff.no accepted."
               autocomplete="email"
               required
             />
@@ -113,6 +118,7 @@
             class="d-none d-lg-block col-lg-6 float-end"
           />
         </form>
+        <div class="text-center text-danger bg-white" id="errorContainer"></div>
         <div>
           <a
             href=""
