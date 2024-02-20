@@ -22,6 +22,17 @@ $color: #332348;
   box-shadow: $shadow1 $shadow2 $shadow3 $shadow4 $color;
 }
 
+$shadow-light1: 1px;
+$shadow-light2: 6px;
+$shadow-light3: 10px;
+$shadow-light4: 2px;
+$color-light: #5e5965;
+
+.box-shadow-light {
+  box-shadow: $shadow-light1 $shadow-light2 $shadow-light3 $shadow-light4
+    $color-light;
+}
+
 $border-radius1: 58px;
 $border-radius2: 5px;
 
