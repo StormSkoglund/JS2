@@ -24,7 +24,7 @@ async function fetchAuthorized(url) {
     posts.forEach((post) => {
       // using Martin Krügers example with a default image, where there is no media to be fetched.
       let mediaPost = post.media || DEFAULT_IMAGE_URL;
-      displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light"><span><h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
+      displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light"><span><img>${post.id}</h5> <img url="${post.avatar}"/>  <h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
       <img class="col-12 rounded-3 shadow-lg" src="${mediaPost}"><p class="fs-6 fw-lighter"> ${post.tags} </p></span> </article>`;
 
       /*const postArticle = document.createElement("article");
@@ -71,22 +71,26 @@ fetchAuthorized(API_BASE_URL + "/api/v1/social/posts");
 const title = document.getElementById("title");
 const body = document.getElementById("body");
 const postButton = document.getElementById("postButton");
-/*const uploadFile = document.getElementById("file");*/
+const image = document.getElementById("image");
+const tags = document.getElementById("tags");
 
 postButton.addEventListener("click", postContent);
 
 function postContent() {
   const titleValue = title.value;
   const bodyValue = body.value;
-  /*const fileValue = uploadFile.value;*/
+  const imageValue = image.value;
+  const tagsValue = tags.value.split(",");
+  //I have split the inputs in order to be able to create an array in the post. Developer.mozilla.org. (n.d.). String.prototype.split() - JavaScript | MDN. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split (accessed 21-02-2024).
 
   const deliverPost = {
     method: "POST",
     body: JSON.stringify({
       title: `${titleValue}`,
       body: `${bodyValue}`,
-      media: "https://picsum.photos/id/44/1000",
-      userId: 22000,
+      media: `${imageValue}`,
+      tags: tagsValue,
+      userId: 1,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -97,4 +101,5 @@ function postContent() {
   fetch(API_BASE_URL + "/api/v1/social/posts", deliverPost)
     .then((response) => response.json())
     .then((json) => console.log(json));
+  //reload window in order to show post in feed
 }
