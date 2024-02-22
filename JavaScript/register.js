@@ -25,6 +25,9 @@ async function registerUser(url, data) {
     if (response.ok) {
       //redirect to login page
       {
+        alert(
+          "Registration successful! You will now be directed to the login page."
+        );
         window.location.href = "/index.html";
       }
     } else {
