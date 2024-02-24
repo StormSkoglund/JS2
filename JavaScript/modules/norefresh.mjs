@@ -3,3 +3,9 @@
 export function preventFormRefresh(event) {
   event.preventDefault();
 }
+
+export function delayRefreshPage() {
+  setTimeout(() => {
+    location.reload(true);
+  }, 3000);
+}

@@ -1,6 +1,7 @@
 const displayFeed = document.getElementById("feedContainer");
 const DEFAULT_IMAGE_URL = "https://picsum.photos/1000";
 import { API_BASE_URL } from "./modules/inputs.mjs";
+import { delayRefreshPage } from "./modules/norefresh.mjs";
 const token = localStorage.getItem("accessToken");
 
 async function fetchAuthorized(url) {
@@ -22,42 +23,20 @@ async function fetchAuthorized(url) {
     displayFeed.innerHTML = "";
 
     posts.forEach((post) => {
+      /*I am formatting the date from the API . Available at https://stackoverflow.com/questions/58791663/how-to-modify-date-format-taken-from-wordpress-api[Viewed Nov 17. 2023]. And at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString[Viewed Nov 17. 2023] */
+      let formatDate = new Date(post.updated).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      });
+
       // using Martin Krügers example with a default image, where there is no media to be fetched.
       let mediaPost = post.media || DEFAULT_IMAGE_URL;
-      displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light"><span><img>${post.id}</h5> <img url="${post.avatar}"/>  <h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
-      <img class="col-12 rounded-3 shadow-lg" src="${mediaPost}"><p class="fs-6 fw-lighter"> ${post.tags} </p></span> </article>`;
-
-      /*const postArticle = document.createElement("article");
-      postArticle.classname = "card m-2 p-3 mt-4 mb-4 box-shadow-light";
-
-      const titleText = document.createElement("h6");
-      titleText.classname = "text-center fs-1";
-      titleText.textContent = post.title;
-
-      const hrPost = document.createElement("hr");
-      hrPost.className = "border border-primary border-2 opacity-75";
-
-      const bodyText = document.createElement("p");
-      bodyText.className = "fs-5";
-      bodyText.textContent = post.body;
-
-      const tags = document.createElement("p");
-      tags.className = "fs-6 fw-lighter";
-      tags.textContent = post.tags;
-
-      const postImage = document.createElement("img");
-      postImage.className = "col-12 rounded-3 shadow-lg";
-      postImage.src = post.media ?? DEFAULT_IMAGE_URL;
-      postImage.alt = post.title;
-
-      displayFeed.append(
-        titleText,
-        hrPost,
-        bodyText,
-        tags,
-        postImage,
-        postArticle
-      );*/
+      displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix"><span><img>${post.id}</h5> <img url="${post.avatar}"/>  <h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
+      <img class="col-12 rounded-3 shadow-lg" src="${mediaPost}"><span class="fs-6 fw-lighter"> ${post.tags} </span><hr class="border border-primary border-2 opacity-75"/><span class="fs-6 fw-bold d-inline float-right"> ${formatDate} </span></span> </article>`;
     });
   } catch (error) {
     console.log(error);
@@ -70,11 +49,12 @@ fetchAuthorized(API_BASE_URL + "/api/v1/social/posts");
 
 const title = document.getElementById("title");
 const body = document.getElementById("body");
-const postButton = document.getElementById("postButton");
+//const postForm = document.getElementById("postForm");
+const postBtn = document.getElementById("postButton");
 const image = document.getElementById("image");
 const tags = document.getElementById("tags");
 
-postButton.addEventListener("click", postContent);
+postBtn.addEventListener("click", postContent);
 
 function postContent() {
   const titleValue = title.value;
@@ -101,5 +81,7 @@ function postContent() {
   fetch(API_BASE_URL + "/api/v1/social/posts", deliverPost)
     .then((response) => response.json())
     .then((json) => console.log(json));
-  //reload window in order to show post in feed
+  if (deliverPost) {
+    delayRefreshPage();
+  }
 }

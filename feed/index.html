@@ -24,6 +24,11 @@
       crossorigin="anonymous"
     ></script>
     <script defer type="module" src="/JavaScript/fetch-feed.js"></script>
+    <script
+      defer
+      type="module"
+      src="/JavaScript/modules/norefresh.mjs"
+    ></script>
   </head>
   <header class="container-fluid border border-5 border-info p-3">
     <div class="">
@@ -99,7 +104,7 @@
           class="col-sm-4 col-md-5 col-lg-3 rounded-circle d-block m-auto"
         />
         <div class="form-group row-lg-3 row-sm-2 d-block col-8 m-auto">
-          <form class="form-group" method="get">
+          <form class="form-group" method="get" id="postForm">
             <h2>What’s on your mind?</h2>
             <label for="title">Subject</label>
             <input
@@ -206,11 +211,10 @@
           <h6 class="fw-bold text-center fs-1">
             Newsfeed from your community!
           </h6>
-          <select class="border-2 border-info">
-            <option selected="">Sort posts by</option>
-            <option value="1">Recent posts first</option>
-            <option value="2">Oldest posts first</option>
-            <option value="3">Friends posts only</option>
+          <select class="my-form p-2 border-info">
+            <option selected="">Sort posts</option>
+            <option value="1" id="select1">Newest posts first</option>
+            <option value="2" id="select2">Oldest posts first</option>
           </select>
           <hr />
           <div
