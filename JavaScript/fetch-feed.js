@@ -72,26 +72,14 @@ consts.postBtn.addEventListener("click", postContent);
 
 consts.dropDate.addEventListener("change", async function () {
   //sorting updated post by ascending sort-order
-  if (this.value === "2") {
-    await fetchAuthorized(
-      API_BASE_URL +
-        "/api/v1/social/posts?_author=true&sort=updated&sortOrder=asc"
-    );
-
+  if (this.value === "1") {
     consts.displayFeed.innerHTML = "";
 
+    displayContent();
+  } else if (this.value === "2") {
+    consts.displayFeed.innerHTML = "";
     displayContentSortOrder();
   }
-  //let filterPosts;
-  //if (this.value === "1") {
-  //  filterPosts = [...posts].sort((a, b) => {
-  //    return new Date(b.created) - new Date(a.created);
-  //  });
-  //} else if (this.value === "2") {
-  //  filterPosts = [...posts].sort((a, b) => {
-  //    return new Date(a.created) - new Date(b.created);
-  //  });
-  //}
 });
 
 /*//Search funtionality
