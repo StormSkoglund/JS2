@@ -6,3 +6,4 @@ export const image = document.getElementById("image");
 export const tags = document.getElementById("tags");
 export const displayFeed = document.getElementById("feedContainer");
 export const DEFAULT_IMAGE_URL = "https://picsum.photos/1000";
+export const searchBar = document.getElementById("search");

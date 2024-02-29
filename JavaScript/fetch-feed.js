@@ -1,8 +1,11 @@
-import * as consts from "./modules/consts.mjs;";
+import * as consts from "./modules/consts.mjs";
+import { displayContent } from "./modules/display-function.mjs";
+import { fetchAuthorized } from "./modules/fetch-content.mjs";
 import { API_BASE_URL } from "./modules/inputs.mjs";
 import { delayRefreshPage } from "./modules/norefresh.mjs";
+import { postContent } from "./modules/post.mjs";
 
-async function fetchAuthorized(url) {
+/*async function fetchAuthorized(url) {
   try {
     const getData = {
       method: "GET",
@@ -17,11 +20,8 @@ async function fetchAuthorized(url) {
     console.log(json);
     consts.displayFeed.innerHTML = "";
     const posts = json;
-    console.log(posts);
-    consts.displayFeed.innerHTML = "";
-
     posts.forEach((post) => {
-      /*I am formatting the date from the API . Available at https://stackoverflow.com/questions/58791663/how-to-modify-date-format-taken-from-wordpress-api[Viewed Nov 17. 2023]. And at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString[Viewed Nov 17. 2023] */
+      /*I am formatting the date from the API . Available at https://stackoverflow.com/questions/58791663/how-to-modify-date-format-taken-from-wordpress-api[Viewed Nov 17. 2023]. And at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString[Viewed Nov 17. 2023] */ /*
       let formatDate = new Date(post.updated).toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
@@ -30,13 +30,15 @@ async function fetchAuthorized(url) {
         minute: "2-digit",
         hour12: false,
       });
-
-      // using Martin Krügers example with a default image, where there is no media to be fetched.
+    
+    //  // using Martin Krügers example with a default image, where there is no media to be fetched.
       let fetchedMedia = post.media || consts.DEFAULT_IMAGE_URL;
-      displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix"><span><img>${post.id}</h5> <img url="${post.avatar}"/>  <h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
+      displayContent();
+      consts.displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix"><span><img>${post.id}</h5> <img url="${post.avatar}"/>  <h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
       <img class="col-12 rounded-3 shadow-lg" src="${fetchedMedia}"><span class="fs-6 fw-lighter"> ${post.tags} </span><hr class="border border-primary border-2 opacity-75"/><span class="fs-6 fw-bold d-inline float-right"> ${formatDate} </span></span> </article>`;
-    });
+    });*/
 
+/*
     const dropDate = document.getElementById("dropDown");
 
     dropDate.addEventListener("change", function () {
@@ -50,47 +52,59 @@ async function fetchAuthorized(url) {
           return new Date(a.created) - new Date(b.created);
         });
       }
-      displayFeed.innerHTML = "";
+      consts.displayFeed.innerHTML = "";
       filterPosts.forEach((post) => {
-        displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix"><span><img>${post.id}</h5> <img url="${post.avatar}"/>  <h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
+        consts.displayFeed.innerHTML += `<article class="card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix"><span><img>${post.id}</h5> <img url="${post.avatar}"/>  <h6 class="text-center fs-1">${post.title}</h6></span><span><hr class="border border-primary border-2 opacity-75"/><div><p class="fs-5" >${post.body}</p>
         <img class="col-12 rounded-3 shadow-lg" src="${post.media}"><span class="fs-6 fw-lighter"> ${post.tags} </span><hr class="border border-primary border-2 opacity-75"/><span class="fs-6 fw-bold d-inline float-right"> ${post.updated} </span></span> </article>`;
       });
     });
   } catch (error) {
     console.log(error);
   }
-}
+}*/
 
-fetchAuthorized(API_BASE_URL + "/api/v1/social/posts");
+displayContent();
 
-postBtn.addEventListener("click", postContent);
+consts.postBtn.addEventListener("click", postContent);
 
-function postContent() {
-  const titleValue = consts.title.value;
-  const bodyValue = consts.body.value;
-  const imageValue = consts.image.value;
-  const tagsValue = consts.tags.value.split(",");
-  //I have split the inputs in order to be able to create an array in the post. Developer.mozilla.org. (n.d.). String.prototype.split() - JavaScript | MDN. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split (accessed 21-02-2024).
+//function postContent() {
+//  const titleValue = consts.title.value;
+//  const bodyValue = consts.body.value;
+//  const imageValue = consts.image.value;
+//  const tagsValue = consts.tags.value.split(",");
+//  //I have split the inputs in order to be able to create an array in the post. Developer.mozilla.org. (n.d.). String.prototype.split() - JavaScript | MDN. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split (accessed 21-02-2024).
+//
+//  const deliverPost = {
+//    method: "POST",
+//    body: JSON.stringify({
+//      title: `${titleValue}`,
+//      body: `${bodyValue}`,
+//      media: `${imageValue}`,
+//      tags: tagsValue,
+//      userId: 1,
+//    }),
+//    headers: {
+//      "Content-type": "application/json; charset=UTF-8",
+//      Authorization: `Bearer ${consts.token}`,
+//    },
+//  };
+//
+//  fetch(API_BASE_URL + "/api/v1/social/posts", deliverPost)
+//    .then((response) => response.json())
+//    .then((json) => console.log(json));
+//  if (deliverPost) {
+//    delayRefreshPage();
+//  }
+//}
 
-  const deliverPost = {
-    method: "POST",
-    body: JSON.stringify({
-      title: `${titleValue}`,
-      body: `${bodyValue}`,
-      media: `${imageValue}`,
-      tags: tagsValue,
-      userId: 1,
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-      Authorization: `Bearer ${token}`,
-    },
-  };
+/*//Search funtionality
+function searchByInput() {
+  const searchValue = consts.searchBar.value;
 
-  fetch(API_BASE_URL + "/api/v1/social/posts", deliverPost)
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-  if (deliverPost) {
-    delayRefreshPage();
-  }
-}
+  consts.searchBar.addEventListener("value", display);
+}*/
+//Update post
+
+//delete post
+
+//View post by ID
