@@ -1,5 +1,8 @@
 import * as consts from "./modules/consts.mjs";
-import { displayContent } from "./modules/display-function.mjs";
+import {
+  displayContent,
+  displayContentSortOrder,
+} from "./modules/display-function.mjs";
 import { fetchAuthorized } from "./modules/fetch-content.mjs";
 import { API_BASE_URL } from "./modules/inputs.mjs";
 import { delayRefreshPage } from "./modules/norefresh.mjs";
@@ -67,35 +70,29 @@ displayContent();
 
 consts.postBtn.addEventListener("click", postContent);
 
-//function postContent() {
-//  const titleValue = consts.title.value;
-//  const bodyValue = consts.body.value;
-//  const imageValue = consts.image.value;
-//  const tagsValue = consts.tags.value.split(",");
-//  //I have split the inputs in order to be able to create an array in the post. Developer.mozilla.org. (n.d.). String.prototype.split() - JavaScript | MDN. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split (accessed 21-02-2024).
-//
-//  const deliverPost = {
-//    method: "POST",
-//    body: JSON.stringify({
-//      title: `${titleValue}`,
-//      body: `${bodyValue}`,
-//      media: `${imageValue}`,
-//      tags: tagsValue,
-//      userId: 1,
-//    }),
-//    headers: {
-//      "Content-type": "application/json; charset=UTF-8",
-//      Authorization: `Bearer ${consts.token}`,
-//    },
-//  };
-//
-//  fetch(API_BASE_URL + "/api/v1/social/posts", deliverPost)
-//    .then((response) => response.json())
-//    .then((json) => console.log(json));
-//  if (deliverPost) {
-//    delayRefreshPage();
-//  }
-//}
+consts.dropDate.addEventListener("change", async function () {
+  //sorting updated post by ascending sort-order
+  if (this.value === "2") {
+    await fetchAuthorized(
+      API_BASE_URL +
+        "/api/v1/social/posts?_author=true&sort=updated&sortOrder=asc"
+    );
+
+    consts.displayFeed.innerHTML = "";
+
+    displayContentSortOrder();
+  }
+  //let filterPosts;
+  //if (this.value === "1") {
+  //  filterPosts = [...posts].sort((a, b) => {
+  //    return new Date(b.created) - new Date(a.created);
+  //  });
+  //} else if (this.value === "2") {
+  //  filterPosts = [...posts].sort((a, b) => {
+  //    return new Date(a.created) - new Date(b.created);
+  //  });
+  //}
+});
 
 /*//Search funtionality
 function searchByInput() {
