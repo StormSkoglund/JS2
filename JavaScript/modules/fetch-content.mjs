@@ -1,4 +1,5 @@
 import * as consts from "./consts.mjs";
+import { tryCatchError } from "./error.mjs";
 
 export async function fetchAuthorized(url) {
   try {
@@ -17,6 +18,6 @@ export async function fetchAuthorized(url) {
     const posts = json;
     return posts;
   } catch (error) {
-    console.log(error);
+    tryCatchError(error);
   }
 }

@@ -22,6 +22,7 @@ async function registerUser(url, data) {
 
     const response = await fetch(url, postData);
     console.log(response);
+    const json = await response.json();
     if (response.ok) {
       //redirect to login page
       {
@@ -35,7 +36,7 @@ async function registerUser(url, data) {
         "Registration failed. The email address and/or account name provided may be registered already."
       );
     }
-    const json = await response.json();
+
     console.log(json);
     return json;
   } catch (error) {

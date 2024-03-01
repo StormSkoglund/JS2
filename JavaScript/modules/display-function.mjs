@@ -1,4 +1,5 @@
 import * as consts from "./consts.mjs";
+import { tryCatchError } from "./error.mjs";
 import { fetchAuthorized } from "./fetch-content.mjs";
 import { API_BASE_URL } from "./inputs.mjs";
 
@@ -80,7 +81,7 @@ export async function displayContent() {
       consts.displayFeed.appendChild(article);
     });
   } catch (error) {
-    console.log(error);
+    tryCatchError(error);
   }
 }
 
@@ -163,6 +164,6 @@ export async function displayContentSortOrder() {
       consts.displayFeed.appendChild(article);
     });
   } catch (error) {
-    console.log(error);
+    tryCatchError(error);
   }
 }

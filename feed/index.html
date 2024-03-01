@@ -81,9 +81,7 @@
             >
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link d-sm-block d-md-none d-lg-none"
-              href="../index.html"
+            <a class="nav-link d-block d-sm-none" href="../index.html"
               >Log-out</a
             >
           </li>
@@ -93,16 +91,18 @@
   </header>
   <body class="bg-secondary">
     <div
-      class="d-flex flex-columns flex-sm-row justify-content-between align-items-start"
+      class="d-flex flex-column flex-sm-row justify-content-between align-items-start m-3"
     >
       <!-- Upload section -->
 
-      <div class="card my-border box-shadow p-3 bg-primary m-5 col-12 col-sm-4">
+      <div
+        class="card my-border box-shadow p-3 bg-primary mt-5 col-12 col-sm-4"
+      >
         <h1 class="lead fw-bold text-center">Hi there!</h1>
         <img
           src="/images/User_main.jpg"
           alt="An image of a male with dark red hair and beard"
-          class="col-sm-4 col-md-5 col-lg-3 rounded-circle d-block m-auto"
+          class="rounded-circle img-fluid col-5 col-md-4 border-info img-thumbnail d-block m-auto border-4 border-info"
         />
         <div class="form-group row-lg-3 row-sm-2 d-block col-8 m-auto">
           <form class="form-group" id="postForm">
@@ -141,7 +141,7 @@
       </div>
 
       <!-- Feed section -->
-      <div class="d-flex row align-items-start m-5 col-12 col-sm-6">
+      <div class="mt-5 col-12 col-sm-6">
         <div class="container-half card my-border box-shadow bg-primary">
           <h6 class="fw-bold text-center fs-1">
             Newsfeed from your community!
@@ -152,6 +152,7 @@
             </option>
             <option value="2" id="select2">Oldest posts first</option>
           </select>
+          <div class="errorContainer"></div>
           <hr />
           <form class="form-inline my-2 my-lg-0 clearfix">
             <input
