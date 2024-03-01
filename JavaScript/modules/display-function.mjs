@@ -31,12 +31,13 @@ export async function displayContent() {
 
       let userImage = document.createElement("img");
       userImage.src = fetchedAvatar;
-      userImage.className = "w-25 rounded-circle d-block m-auto opacity-75";
+      userImage.className =
+        "rounded-circle img-fluid col-4 col-md-4 border-info img-thumbnail d-block m-auto border-4 border-info opacity-75";
       span1.appendChild(userImage);
 
       let userName = document.createElement("p");
       userName.textContent = post.author.name;
-      userName.className = "fs-5 fw-bold text-center";
+      userName.className = "fs-6 text-center";
       span1.appendChild(userName);
 
       let h6 = document.createElement("h6");
@@ -114,12 +115,13 @@ export async function displayContentSortOrder() {
 
       let userImage = document.createElement("img");
       userImage.src = fetchedAvatar;
-      userImage.className = "w-25 rounded-circle d-block m-auto opacity-75";
+      userImage.className =
+        "rounded-circle img-fluid col-4 col-md-4 border-info img-thumbnail d-block m-auto border-4 border-info opacity-75";
       span1.appendChild(userImage);
 
       let userName = document.createElement("p");
       userName.textContent = post.author.name;
-      userName.className = "fs-5 fw-bold text-center";
+      userName.className = "fs-6 text-center";
       span1.appendChild(userName);
 
       let h6 = document.createElement("h6");

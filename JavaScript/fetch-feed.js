@@ -25,12 +25,15 @@ consts.dropDate.addEventListener("change", async function () {
   }
 });
 
-/*//Search funtionality
-function searchByInput() {
-  const searchValue = consts.searchBar.value;
+//Search funtionality
+//async function searchByInput() {
+//  let posts = await fetchAuthorized();
+//  const searchValue = consts.searchBar.value;
+//  console.log(searchValue);
+//}
 
-  consts.searchBar.addEventListener("value", display);
-}*/
+//consts.searchBar.addEventListener("value", searchByInput);
+
 //Update post
 
 //delete post

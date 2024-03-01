@@ -96,7 +96,7 @@
       <!-- Upload section -->
 
       <div
-        class="card my-border box-shadow p-3 bg-primary mt-5 col-12 col-sm-4"
+        class="card my-border box-shadow p-3 bg-primary mt-5 col-12 col-sm-5"
       >
         <h1 class="lead fw-bold text-center">Hi there!</h1>
         <img
@@ -146,6 +146,9 @@
           <h6 class="fw-bold text-center fs-1">
             Newsfeed from your community!
           </h6>
+          <label for="dropDown" class="fw-bolder fs-6 m-1"
+            >Filter by date:</label
+          >
           <select class="my-form p-2 border-info" id="dropDown">
             <option value="1" id="select1" selected="true">
               Latest posts first
@@ -155,6 +158,7 @@
           <div class="errorContainer"></div>
           <hr />
           <form class="form-inline my-2 my-lg-0 clearfix">
+            <label for="search" class="fw-bolder fs-6 m-1">Search Posts:</label>
             <input
               class="form-control border-info mr-sm-1 my-form"
               type="text"
@@ -162,7 +166,7 @@
               placeholder="Search"
             />
             <button
-              class="bolder btn btn-info m-4 float-end"
+              class="bolder btn btn-info m-2 float-end"
               id="searchBtn"
               type="submit"
             >
@@ -180,7 +184,13 @@
     </div>
     <footer class="text-center border border-5 border-info">
       &copy2024
-      <div><h5 class="display-6">*musync*</h5></div>
+      <div>
+        <img
+          src="/images/_musync_.png"
+          alt="A logo in bold letters, it spells *musync*"
+          class="col-2"
+        />
+      </div>
     </footer>
   </body>
 </html>
