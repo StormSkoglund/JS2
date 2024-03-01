@@ -28,6 +28,12 @@ export async function displayContent() {
 
       let span1 = document.createElement("span");
       let span2 = document.createElement("span");
+      let singlePostLink = "../feed/single-post/index.html?";
+
+      let postLink = document.createElement("a");
+      postLink.href = singlePostLink + "id=" + post.id;
+      postLink.className = "stretched-link";
+      span1.appendChild(postLink);
 
       let userImage = document.createElement("img");
       userImage.src = fetchedAvatar;
@@ -106,12 +112,18 @@ export async function displayContentSortOrder() {
       // using Martin Krügers example with a default image, where there is no media to be fetched.
       let fetchedMedia = post.media || consts.DEFAULT_IMAGE_URL;
       let fetchedAvatar = post.author.avatar || consts.DEFAULT_IMAGE_URL;
+      let singlePostLink = "feed/single-post/index.html?";
 
       let article = document.createElement("article");
       article.className = "card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix";
 
       let span1 = document.createElement("span");
       let span2 = document.createElement("span");
+
+      let postLink = document.createElement("a");
+      postLink.href = singlePostLink + "id=" + post.id;
+      postLink.className = "stretched-link";
+      span1.appendChild(postLink);
 
       let userImage = document.createElement("img");
       userImage.src = fetchedAvatar;
