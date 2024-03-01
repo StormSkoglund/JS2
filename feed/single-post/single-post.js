@@ -11,8 +11,12 @@ const id = parameters.get("id");
 
 async function displaySinglePost() {
   const post = await fetchAuthorized(
-    API_BASE_URL + "/api/v1/social/posts?_author=true&" + id
+    API_BASE_URL + "/api/v1/social/posts/" + id + "?_author=true"
   );
+
+  if (!post) {
+    console.log("Problems with API");
+  }
 
   try {
     if (post) {
