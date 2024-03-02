@@ -90,12 +90,51 @@
     <!-- main profile-container -->
     <div
       class="container mt-5 mb-5 100vh bg-primary justify-content-between align-items-center col-sm-10 col-md-8 col-lg-5 border-rounded clearfix rounded-5 p-3 box-shadow"
-      id="single-post"
+      id="feedContainer"
     ></div>
+    <!--Update Post-->
+    <section class="container mb-5 col-6">
+      <form id="form" class="form-group">
+        <div>
+          <label for="title">Change Title</label>
+          <input
+            class="my-form d-flex align-items-end form-control"
+            type="text"
+            id="title"
+          />
+        </div>
+        <div>
+          <label for="body">Change Body Content</label>
+          <input
+            type="body"
+            class="my-form d-flex align-items-end form-control"
+            id="inputMail"
+          />
+        </div>
+        <div>
+          <label for="image">Update Image Url</label>
+          <input
+            type="url"
+            class="my-form d-flex align-items-end form-control"
+            id="image"
+            placeholder="Insert URL here"
+          />
+        </div>
+        <button
+          class="btn btn-info text-white fw-bold d-flex float-center float-md-end"
+          type="submit"
+          id="postBtn"
+          name="formButton"
+        >
+          Update Post
+        </button>
+      </form>
+    </section>
     <div
       id="errorContainer"
-      class="bg-danger text-center text-white fs-4 p-3 d-block m-auto"
+      class="text-center text-danger fs-4 p-3 m-auto"
     ></div>
+    <form action="" class=""></form>
     <footer class="text-center border border-5 border-info">
       &copy2024
       <div>
