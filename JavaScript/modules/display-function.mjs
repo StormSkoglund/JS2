@@ -19,7 +19,7 @@ export async function displayContent(url) {
 
       // using Martin Krügers example with a default image, where there is no media to be fetched.
       let fetchedMedia = post.media || consts.DEFAULT_IMAGE_URL;
-      let fetchedAvatar = post.author.avatar || consts.DEFAULT_IMAGE_URL;
+      let fetchedAvatar = post.author.avatar || consts.DEFAULT_IMAGE_AVATAR_URL;
 
       let article = document.createElement("article");
       article.className = "card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix";
@@ -36,7 +36,7 @@ export async function displayContent(url) {
       let userImage = document.createElement("img");
       userImage.src = fetchedAvatar;
       userImage.className =
-        "rounded-circle img-fluid col-4 col-md-4 border-info img-thumbnail d-block m-auto border-4 border-info opacity-75";
+        "rounded-circle img-fluid col-4 col-md-3 border-info img-thumbnail d-block m-auto border-4 border-info opacity-75";
       span1.appendChild(userImage);
 
       let userName = document.createElement("p");
@@ -95,7 +95,7 @@ export async function displaySinglePost(url) {
   console.log(post);
   try {
     let fetchedMedia = post.media || consts.DEFAULT_IMAGE_URL;
-    let fetchedAvatar = post.author.avatar || consts.DEFAULT_IMAGE_URL;
+    let fetchedAvatar = post.author.avatar || consts.DEFAULT_IMAGE_AVATAR_URL;
     let postContainer = document.getElementById("feedContainer");
 
     let article = document.createElement("article");
@@ -107,7 +107,7 @@ export async function displaySinglePost(url) {
     let userImage = document.createElement("img");
     userImage.src = fetchedAvatar;
     userImage.className =
-      "rounded-circle img-fluid col-4 col-md-4 border-info img-thumbnail d-block m-auto border-4 border-info opacity-75";
+      "rounded-circle img-fluid col-4 col-md-3 border-info img-thumbnail d-block m-auto border-4 border-info opacity-75";
     span1.appendChild(userImage);
 
     let userName = document.createElement("p");
@@ -150,6 +150,7 @@ export async function displaySinglePost(url) {
     article.appendChild(span2);
 
     postContainer.appendChild(article);
+    return post;
   } catch (error) {
     tryCatchError();
   }

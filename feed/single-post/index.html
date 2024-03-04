@@ -94,37 +94,42 @@
     ></div>
     <!--Update Post-->
     <section class="container mb-5 col-6">
-      <form id="form" class="form-group">
+      <form id="formEdit" class="form-group">
         <div>
           <label for="title">Change Title</label>
           <input
             class="my-form d-flex align-items-end form-control"
             type="text"
             id="title"
+            name="title"
           />
         </div>
         <div>
           <label for="body">Change Body Content</label>
-          <input
-            type="body"
+          <textarea
+            type="text"
             class="my-form d-flex align-items-end form-control"
-            id="inputMail"
-          />
+            id="body"
+            name="body"
+            rows="3"
+          ></textarea>
         </div>
         <div>
-          <label for="image">Update Image Url</label>
+          <label for="image">Paste image URL here: </label>
+          <input type="url" class="my-form form-control" id="image" />
+          <label for="tags">Tags seperated by comma: </label>
           <input
-            type="url"
-            class="my-form d-flex align-items-end form-control"
-            id="image"
-            placeholder="Insert URL here"
+            type="text"
+            class="my-form form-control"
+            name="tags"
+            id="tags"
           />
         </div>
         <button
           class="btn btn-info text-white fw-bold d-flex float-center float-md-end"
           type="submit"
-          id="postBtn"
-          name="formButton"
+          id="updateBtn"
+          name="updateBtn"
         >
           Update Post
         </button>
@@ -134,7 +139,7 @@
       id="errorContainer"
       class="text-center text-danger fs-4 p-3 m-auto"
     ></div>
-    <form action="" class=""></form>
+
     <footer class="text-center border border-5 border-info">
       &copy2024
       <div>

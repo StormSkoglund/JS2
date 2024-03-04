@@ -29,6 +29,14 @@ async function loginUser(url, data) {
     const json = await response.json();
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem(
+      "userProfile",
+      JSON.stringify({
+        userInputname: json.name,
+        userMail: json.email,
+      })
+    );
+
     console.log(json);
     return json;
   } catch (error) {
