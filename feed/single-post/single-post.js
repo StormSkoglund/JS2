@@ -5,62 +5,12 @@ import { displayContent } from "../../JavaScript/modules/display-function.mjs";
 import * as consts from "../../JavaScript/modules/consts.mjs";
 import { displaySinglePost } from "../../JavaScript/modules/display-function.mjs";
 import { preventFormRefresh } from "../../JavaScript/modules/norefresh.mjs";
+import { deletePost } from "../../JavaScript/modules/deletePosts.mjs";
 
-//Queryparamms to fetch ID
+//Query params to fetch ID
 const queryString = document.location.search;
-
 const parameters = new URLSearchParams(queryString);
-
 const id = parameters.get("id");
-/*
-displaySinglePost(
-  API_BASE_URL + "/api/v1/social/posts/" + id + "?_author=true"
-);
-
-//Fill form with input from selected post
-
-const form = document.getElementById("formEdit");
-
-if (form) {
-  displaySinglePost(
-    API_BASE_URL + "/api/v1/social/posts/" + id + "?_author=true"
-  );
-  form.title.value = consts.post.title;
-  form.body.value = consts.post.body;
-  form.image.value = consts.post.image;
-  form.tags.value = consts.post.tags;
-
-  //find input from form
-
-  const titleValue = consts.title.value;
-  const bodyValue = consts.body.value;
-  const imageValue = consts.image.value;
-  const tagsValue = consts.tags.value.split(",");
-
-  consts.postBtn.addEventListener("click", updatePost);
-}
-
-function updatePost() {
-  fetch(API_BASE_URL + "/api/v1/social/posts/" + id, {
-    method: "PUT",
-    body: JSON.stringify({
-      id: id,
-      title: `${titleValue}`,
-      body: `${bodyValue}`,
-      media: `${imageValue}`,
-      tags: tagsValue,
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-      Authorization: `Bearer ${consts.token}`,
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-}
-//Listen for click to fire update
-*/
-
 const form = document.getElementById("formEdit");
 
 console.log(id);
@@ -80,7 +30,7 @@ async function fillFormBeforeUpdate() {
 }
 //Modified version of the put API fetch example, found in JS2 lesson 4.
 function updatePost(event) {
-  preventFormRefresh(event);
+  event.preventDefault();
   const idValue = id;
   const titleValue = consts.title.value;
   const bodyValue = consts.body.value;
@@ -123,3 +73,13 @@ function updatePost(event) {
 }
 
 fillFormBeforeUpdate();
+
+// delete post
+
+//const removePostBtn = document.getElementById("delete");
+//const url = API_BASE_URL + "/api/v1/social/posts/" + id;
+
+//deletePost(url, id);
+const removeBtn = document.getElementById("delete");
+
+removeBtn.addEventListener("click", deletePost);

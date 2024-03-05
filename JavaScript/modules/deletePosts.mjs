@@ -1,9 +1,14 @@
+import { tryCatchError } from "./error.mjs";
 import { preventFormRefresh } from "./norefresh.mjs";
+import * as consts from "./consts.mjs";
+import { API_BASE_URL } from "./inputs.mjs";
 
-async function deletePost(id, url, event) {
-  preventFormRefresh(event);
+const queryString = document.location.search;
+const parameters = new URLSearchParams(queryString);
+const id = parameters.get("id");
+
+export async function deletePost(url, event) {
   try {
-    id = id;
     const getData = {
       method: "delete",
       headers: {
@@ -11,7 +16,17 @@ async function deletePost(id, url, event) {
         Authorization: `Bearer ${consts.token}`,
       },
     };
-    const response = await fetch(url, id, getData);
+    const response = await fetch(
+      API_BASE_URL + "/api/v1/social/posts/" + id + "?_author=true",
+      getData
+    );
+    if (response.ok) {
+      setTimeout(() => {
+        window.location.href = "/feed/index.html";
+      }, 1200);
+    } else {
+      alert("You can't delete other users post!");
+    }
     console.log(response);
   } catch (error) {
     tryCatchError(error);
