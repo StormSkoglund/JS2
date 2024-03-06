@@ -1,6 +1,6 @@
 import * as consts from "./consts.mjs";
 import { tryCatchError } from "./error.mjs";
-import { fetchAuthorized } from "./fetch-content.mjs";
+import { fetchAuthorized } from "./fetchContent.mjs";
 import { API_BASE_URL } from "./inputs.mjs";
 
 export async function displayContent(url) {

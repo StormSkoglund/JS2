@@ -26,7 +26,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="/feed/single-post/single-post.js"></script>
+    <script defer type="module" src="/feed/single-post/singlePost.js"></script>
     <script type="module" defer src="/JavaScript/modules/error.mjs"></script>
   </head>
   <header class="container-fluid border border-5 border-info p-3">
@@ -53,8 +53,8 @@
       </a>
 
       <img
-        src="/images/User_main.jpg"
-        alt="An image of a male with dark red hair and beard"
+        src="//img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?t=st=1709563197~exp=1709566797~hmac=b689e5e177c3d6c62da590cd067d75d9ba4e97609d314b94de53d37a913bf5a5&w=740"
+        alt="A default profile avatar"
         class="rounded-circle float-end col-1"
       />
     </div>
@@ -70,14 +70,21 @@
         <ul class="navbar-nav m-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a
-              class="nav-link active"
               aria-current="page"
+              class="nav-link d-block d-sm-none"
               href="/profile/index.html"
               >Profile</a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/feed/index.html">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-info"
+              href="/feed/single-post/index.html"
+              >Edit</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link d-block d-sm-none" href="/index.html">Log-out</a>

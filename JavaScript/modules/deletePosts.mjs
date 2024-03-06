@@ -1,5 +1,5 @@
 import { tryCatchError } from "./error.mjs";
-import { preventFormRefresh } from "./norefresh.mjs";
+import { preventFormRefresh } from "./noRefresh.mjs";
 import * as consts from "./consts.mjs";
 import { API_BASE_URL } from "./inputs.mjs";
 
@@ -21,6 +21,7 @@ export async function deletePost(url, event) {
       getData
     );
     if (response.ok) {
+      alert("Post has been deleted");
       setTimeout(() => {
         window.location.href = "/feed/index.html";
       }, 1200);

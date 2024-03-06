@@ -1,6 +1,6 @@
 import * as consts from "./consts.mjs";
 import { API_BASE_URL } from "./inputs.mjs";
-import { delayRefreshPage } from "./norefresh.mjs";
+import { delayRefreshPage } from "./noRefresh.mjs";
 
 export function postContent() {
   const titleValue = consts.title.value;

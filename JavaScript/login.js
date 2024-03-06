@@ -8,7 +8,7 @@ import {
 
 import { tryCatchError } from "./modules/error.mjs";
 
-import { preventFormRefresh } from "./modules/norefresh.mjs";
+import { preventFormRefresh } from "./modules/noRefresh.mjs";
 
 async function loginUser(url, data) {
   try {
@@ -22,7 +22,7 @@ async function loginUser(url, data) {
     const response = await fetch(url, postData);
     console.log(response);
     if (response.ok) {
-      window.location.href = "/profile/index.html";
+      window.location.href = "/feed/index.html";
     } else {
       throw new Error("User does not exist.");
     }

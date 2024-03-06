@@ -1,8 +1,8 @@
 import * as consts from "./modules/consts.mjs";
-import { displayContent } from "./modules/display-function.mjs";
-import { fetchAuthorized } from "./modules/fetch-content.mjs";
+import { displayContent } from "./modules/displayFunction.mjs";
+import { fetchAuthorized } from "./modules/fetchContent.mjs";
 import { API_BASE_URL } from "./modules/inputs.mjs";
-import { delayRefreshPage } from "./modules/norefresh.mjs";
+import { delayRefreshPage } from "./modules/noRefresh.mjs";
 import { postContent } from "./modules/post.mjs";
 import { tryCatchError } from "./modules/error.mjs";
 

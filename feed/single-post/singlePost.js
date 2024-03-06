@@ -1,10 +1,10 @@
-import { fetchAuthorized } from "../../JavaScript/modules/fetch-content.mjs";
+import { fetchAuthorized } from "../../JavaScript/modules/fetchContent.mjs";
 import { API_BASE_URL } from "../../JavaScript/modules/inputs.mjs";
 import { tryCatchError } from "../../JavaScript/modules/error.mjs";
-import { displayContent } from "../../JavaScript/modules/display-function.mjs";
+import { displayContent } from "../../JavaScript/modules/displayFunction.mjs";
 import * as consts from "../../JavaScript/modules/consts.mjs";
-import { displaySinglePost } from "../../JavaScript/modules/display-function.mjs";
-import { preventFormRefresh } from "../../JavaScript/modules/norefresh.mjs";
+import { displaySinglePost } from "../../JavaScript/modules/displayFunction.mjs";
+import { preventFormRefresh } from "../../JavaScript/modules/noRefresh.mjs";
 import { deletePost } from "../../JavaScript/modules/deletePosts.mjs";
 
 //Query params to fetch ID
@@ -55,6 +55,7 @@ function updatePost(event) {
       if (!response.ok) {
         throw new Error("error code " + response.status);
       } else {
+        alert("Update succesful!");
         setTimeout(() => {
           window.location.href = "/feed/index.html";
         }, 1200);
@@ -74,12 +75,6 @@ function updatePost(event) {
 
 fillFormBeforeUpdate();
 
-// delete post
-
-//const removePostBtn = document.getElementById("delete");
-//const url = API_BASE_URL + "/api/v1/social/posts/" + id;
-
-//deletePost(url, id);
 const removeBtn = document.getElementById("delete");
 
 removeBtn.addEventListener("click", deletePost);

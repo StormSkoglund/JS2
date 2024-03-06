@@ -6,7 +6,7 @@ import {
   form,
 } from "./modules/inputs.mjs";
 
-import { preventFormRefresh } from "./modules/norefresh.mjs";
+import { preventFormRefresh } from "./modules/noRefresh.mjs";
 
 import { tryCatchError } from "./modules/error.mjs";
 
