@@ -1,10 +1,10 @@
-import * as consts from "./modules/consts.mjs";
-import { displayContent } from "./modules/displayFunction.mjs";
-import { fetchAuthorized } from "./modules/fetchContent.mjs";
-import { API_BASE_URL } from "./modules/inputs.mjs";
-import { delayRefreshPage } from "./modules/noRefresh.mjs";
-import { postContent } from "./modules/post.mjs";
-import { tryCatchError } from "./modules/error.mjs";
+import * as consts from "../JavaScript/modules/consts.mjs";
+import { displayContent } from "../JavaScript/modules/displayFunction.mjs";
+import { fetchAuthorized } from "../JavaScript/modules/fetchContent.mjs";
+import { API_BASE_URL } from "../JavaScript/modules/inputs.mjs";
+import { delayRefreshPage } from "../JavaScript/modules/noRefresh.mjs";
+import { postContent } from "../JavaScript/modules/post.mjs";
+import { tryCatchError } from "../JavaScript/modules/error.mjs";
 
 displayContent(API_BASE_URL + "/api/v1/social/posts?_author=true");
 

@@ -4,11 +4,11 @@ import {
   userMail,
   userPassword,
   form,
-} from "./modules/inputs.mjs";
+} from "../JavaScript/modules/inputs.mjs";
 
-import { preventFormRefresh } from "./modules/noRefresh.mjs";
+import { preventFormRefresh } from "../JavaScript/modules/noRefresh.mjs";
 
-import { tryCatchError } from "./modules/error.mjs";
+import { tryCatchError } from "../JavaScript/modules/error.mjs";
 
 async function registerUser(url, data) {
   try {
