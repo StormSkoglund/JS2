@@ -3,6 +3,20 @@ import { tryCatchError } from "./error.mjs";
 import { fetchAuthorized } from "./fetchContent.mjs";
 import { API_BASE_URL } from "./inputs.mjs";
 
+/**
+ * Asyncronous function. Fetches content from the url parameter. 
+ *
+ * @param {string} url - The URL from which to fetch the content.
+ * @throws Throws an error, if the content cannot be fetched.
+ *
+ * @example
+  try {
+ *   await displayContent('https://api.example.com/posts');
+ * } catch (error) {
+ *   console.error(error);
+ * }
+ */
+
 export async function displayContent(url) {
   const posts = await fetchAuthorized(url);
   try {

@@ -2,7 +2,7 @@ import * as consts from "../JavaScript/modules/consts.mjs";
 import { displayContent } from "../JavaScript/modules/displayFunction.mjs";
 import { fetchAuthorized } from "../JavaScript/modules/fetchContent.mjs";
 import { API_BASE_URL } from "../JavaScript/modules/inputs.mjs";
-import { delayRefreshPage } from "../JavaScript/modules/noRefresh.mjs";
+
 import { postContent } from "../JavaScript/modules/post.mjs";
 import { tryCatchError } from "../JavaScript/modules/error.mjs";
 

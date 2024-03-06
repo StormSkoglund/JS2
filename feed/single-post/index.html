@@ -26,8 +26,13 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="/feed/fetchFeed.js"></script>
-    <script type="module" defer src="/JavaScript/modules/error.mjs"></script>
+    <script defer type="module" src="/feed/single-post/singlePost.js"></script>
+    <script
+      defer
+      type="module"
+      defer
+      src="/JavaScript/modules/error.mjs"
+    ></script>
   </head>
   <header class="container-fluid border border-5 border-info p-3">
     <div class="container-fluid">
@@ -103,7 +108,7 @@
     <section class="container mb-5 col-6">
       <form id="formEdit" class="form-group">
         <div>
-          <label for="title">Change Title</label>
+          <label for="title" class="fw-bold">Change Title</label>
           <input
             class="my-form d-flex align-items-end form-control"
             type="text"
@@ -112,7 +117,7 @@
           />
         </div>
         <div>
-          <label for="body">Change Body Content</label>
+          <label for="body" class="fw-bold">Change Body Content</label>
           <textarea
             type="text"
             class="my-form d-flex align-items-end form-control"
@@ -122,9 +127,9 @@
           ></textarea>
         </div>
         <div>
-          <label for="image">Paste image URL here: </label>
+          <label for="image" class="fw-bold">Paste image URL here: </label>
           <input type="url" class="my-form form-control" id="image" />
-          <label for="tags">Tags seperated by comma: </label>
+          <label for="tags" class="fw-bold">Tags seperated by comma: </label>
           <input
             type="text"
             class="my-form form-control"
@@ -142,7 +147,7 @@
         </button>
       </form>
       <button
-        class="btn btn-danger text-white fw-bold d-flex float-start me-5 float-md-start"
+        class="btn btn-danger text-white fw-bold d-flex float-start me-5 mt mw-75 h-50 float-md-start"
         type="button"
         id="delete"
         name="delete"
@@ -152,7 +157,7 @@
     </section>
     <div
       id="errorContainer"
-      class="text-center text-danger fs-4 p-3 m-auto"
+      class="text-center text-danger fs-4 mw-75 h-50 mt p-3 m-auto"
     ></div>
 
     <footer class="text-center border border-5 border-info">

@@ -1,10 +1,6 @@
-import { fetchAuthorized } from "../../JavaScript/modules/fetchContent.mjs";
 import { API_BASE_URL } from "../../JavaScript/modules/inputs.mjs";
-import { tryCatchError } from "../../JavaScript/modules/error.mjs";
-import { displayContent } from "../../JavaScript/modules/displayFunction.mjs";
 import * as consts from "../../JavaScript/modules/consts.mjs";
 import { displaySinglePost } from "../../JavaScript/modules/displayFunction.mjs";
-import { preventFormRefresh } from "../../JavaScript/modules/noRefresh.mjs";
 import { deletePost } from "../../JavaScript/modules/deletePosts.mjs";
 
 //Query params to fetch ID
