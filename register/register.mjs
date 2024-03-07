@@ -31,10 +31,13 @@ async function registerUser(url, data) {
         );
         window.location.href = "/index.html";
       }
-    } else {
+    }
+    if (response.status === 400) {
       throw new Error(
         "Registration failed. The email address and/or account name provided may be registered already."
       );
+    } else {
+      throw new Error();
     }
 
     console.log(json);

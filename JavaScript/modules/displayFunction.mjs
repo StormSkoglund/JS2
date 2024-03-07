@@ -36,7 +36,8 @@ export async function displayContent(url) {
       let fetchedAvatar = post.author.avatar || consts.DEFAULT_IMAGE_AVATAR_URL;
 
       let article = document.createElement("article");
-      article.className = "card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix";
+      article.className =
+        "card m-2 p-3 mt-4 mb-4 box-shadow-light clearfix my-hover-enlarge";
 
       let span1 = document.createElement("span");
       let span2 = document.createElement("span");
