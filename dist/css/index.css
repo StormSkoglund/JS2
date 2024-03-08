@@ -11874,7 +11874,7 @@ textarea.form-control-lg {
   }
 }
 .my-form {
-  padding: 0.6rem;
+  padding: 0.2rem;
   border: solid;
   border-width: 3px;
   border-color: #3590d2;
@@ -11882,7 +11882,7 @@ textarea.form-control-lg {
 }
 
 .my-form-min {
-  padding: 0.5rem;
+  padding: 0.3rem;
   border: solid;
   border-width: 3px;
   border-color: #3590d2;
@@ -11890,7 +11890,7 @@ textarea.form-control-lg {
 }
 
 .my-hover-enlarge {
-  transition: transform 0.2s;
+  transition: transform 0.1s;
 }
 .my-hover-enlarge:hover {
   transform: scale(1.1);

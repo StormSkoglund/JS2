@@ -1,5 +1,5 @@
 import * as consts from "../consts.mjs";
-import { API_BASE_URL } from "../inputs.mjs";
+import { API_BASE_URL, socialEndpoint } from "../inputs.mjs";
 
 /** 
 * A function that updates a post, requiring an attached ID;
@@ -25,7 +25,7 @@ export function updatePost(event) {
   const imageValue = consts.image.value;
   const tagsValue = consts.tags.value.split(",");
 
-  fetch(API_BASE_URL + "/api/v1/social/posts/" + consts.id, {
+  fetch(API_BASE_URL + socialEndpoint + consts.id, {
     method: "PUT",
     body: JSON.stringify({
       id: `${idValue}`,

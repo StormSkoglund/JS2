@@ -49,7 +49,7 @@ $border-radius2: 5px;
 }
 
 $form-border: 5px;
-$form-size: 0.6rem;
+$form-size: 0.2rem;
 $form-border-thickness: 3px;
 $form-type: solid;
 $form-border-color: #3590d2;
@@ -62,7 +62,7 @@ $form-border-color: #3590d2;
   border-radius: $border-radius2;
 }
 
-$form-size-min: 0.5rem;
+$form-size-min: 0.3rem;
 
 .my-form-min {
   padding: $form-size-min;
@@ -75,7 +75,7 @@ $form-size-min: 0.5rem;
 $link-decoration: none;
 
 .my-hover-enlarge {
-  transition: transform 0.2s;
+  transition: transform 0.1s;
 
   &:hover {
     transform: scale(1.1);

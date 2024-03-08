@@ -1,12 +1,14 @@
 import * as consts from "../JavaScript/modules/consts.mjs";
 import { displayContent } from "../JavaScript/modules/displayFunction.mjs";
-import { fetchAuthorized } from "../JavaScript/modules/fetchContent.mjs";
+import { fetchAuthorized } from "../JavaScript/modules/API/fetchContent.mjs";
 import { API_BASE_URL } from "../JavaScript/modules/inputs.mjs";
-
-import { postContent } from "../JavaScript/modules/post.mjs";
+import { endpointsCombined } from "../JavaScript/modules/inputs.mjs";
+import { authorEndpoint } from "../JavaScript/modules/inputs.mjs";
+import { socialEndpoint } from "../JavaScript/modules/inputs.mjs";
+import { postContent } from "../JavaScript/modules/API/post.mjs";
 import { tryCatchError } from "../JavaScript/modules/error.mjs";
 
-displayContent(API_BASE_URL + "/api/v1/social/posts?_author=true");
+displayContent(API_BASE_URL + endpointsCombined);
 
 let posts = [];
 
@@ -17,7 +19,7 @@ consts.dropDate.addEventListener("change", async function () {
   if (this.value === "1") {
     consts.displayFeed.innerHTML = "";
 
-    displayContent(API_BASE_URL + "/api/v1/social/posts?_author=true");
+    displayContent(API_BASE_URL + endpointsCombined);
   } else if (this.value === "2") {
     consts.displayFeed.innerHTML = "";
 
@@ -33,9 +35,7 @@ consts.dropDate.addEventListener("change", async function () {
 async function displayContentFiltered(posts, userInput = "") {
   console.log(userInput);
   try {
-    posts = await fetchAuthorized(
-      API_BASE_URL + "/api/v1/social/posts?_author=true"
-    );
+    posts = await fetchAuthorized(API_BASE_URL + endpointsCombined);
     consts.displayFeed.innerHTML = "";
     let filteredPosts = posts.filter((post) => {
       if (userInput === "") {

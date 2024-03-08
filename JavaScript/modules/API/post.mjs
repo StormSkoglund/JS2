@@ -1,6 +1,6 @@
-import * as consts from "./consts.mjs";
-import { API_BASE_URL } from "./inputs.mjs";
-import { delayRefreshPage } from "./noRefresh.mjs";
+import * as consts from "../consts.mjs";
+import { API_BASE_URL, socialEndpoint } from "../inputs.mjs";
+import { delayRefreshPage } from "../noRefresh.mjs";
 
 export function postContent() {
   const titleValue = consts.title.value;
@@ -24,7 +24,7 @@ export function postContent() {
     },
   };
 
-  fetch(API_BASE_URL + "/api/v1/social/posts", deliverPost)
+  fetch(API_BASE_URL + socialEndpoint, deliverPost)
     .then((response) => response.json())
     .then((json) => console.log(json));
   if (deliverPost) {

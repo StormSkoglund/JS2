@@ -1,5 +1,5 @@
-import * as consts from "./consts.mjs";
-import { tryCatchError } from "./error.mjs";
+import * as consts from "../consts.mjs";
+import { tryCatchError } from "../error.mjs";
 
 export async function fetchAuthorized(url) {
   try {
