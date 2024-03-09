@@ -7,6 +7,7 @@ import * as consts from "../../JavaScript/modules/consts.mjs";
 import { displaySinglePost } from "../../JavaScript/modules/displayFunction.mjs";
 import { deletePost } from "../../JavaScript/modules/API/deletePosts.mjs";
 import { updatePost } from "../../JavaScript/modules/API/updatePosts.mjs";
+import { logOut } from "../../JavaScript/modules/logOut.mjs";
 
 const form = document.getElementById("formEdit");
 
@@ -33,3 +34,9 @@ fillFormBeforeUpdate();
 const removeBtn = document.getElementById("delete");
 
 removeBtn.addEventListener("click", deletePost);
+
+//log-out!
+
+consts.userLogsOut.addEventListener("click", function (event) {
+  logOut(event);
+});

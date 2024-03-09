@@ -7,6 +7,7 @@ import { authorEndpoint } from "../JavaScript/modules/inputs.mjs";
 import { socialEndpoint } from "../JavaScript/modules/inputs.mjs";
 import { postContent } from "../JavaScript/modules/API/post.mjs";
 import { tryCatchError } from "../JavaScript/modules/error.mjs";
+import { logOut } from "../JavaScript/modules/logOut.mjs";
 
 displayContent(API_BASE_URL + endpointsCombined);
 
@@ -137,6 +138,8 @@ function processSearchInput(event) {
 
 consts.searchByUserInput.addEventListener("keyup", processSearchInput);
 
-//Update post
+//log-out!
 
-//delete post
+consts.userLogsOut.addEventListener("click", function (event) {
+  logOut(event);
+});

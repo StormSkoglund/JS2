@@ -7,7 +7,7 @@
       <meta charset="UTF-8" />
       <meta
         name="description"
-        content="Profile page belonging to a Musync user"
+        content="Profile page belonging to a Musync user. Musync is the number one community for musicians"
       />
       <meta name="keywords" content="Meeting-place, Music, SoMe" />
       <meta name="author" content="Alex Storm Skoglund" />
@@ -26,6 +26,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script defer type="module" src="/profile/profile.mjs"></script>
   </head>
   <header class="container-fluid border border-5 border-info p-3">
     <div class="container-fluid">
@@ -36,7 +37,7 @@
           width="56"
           height="56"
           fill="black"
-          class="bi bi-box-arrow-left float-end mt-5 mr-4 d-none d-sm-block"
+          class="bi bi-box-arrow-left float-end mt-5 mr-4 d-none d-sm-block log-out"
           viewBox="0 0 16 16"
         >
           <path
@@ -51,7 +52,7 @@
       </a>
 
       <img
-        src="//img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?t=st=1709563197~exp=1709566797~hmac=b689e5e177c3d6c62da590cd067d75d9ba4e97609d314b94de53d37a913bf5a5&w=740"
+        src="/images/Avatar_default.png"
         alt="A default profile avatar"
         class="rounded-circle float-end col-1"
       />
@@ -79,8 +80,9 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link d-block d-sm-none my-hover-enlarge"
-              href="../index.html"
+              id="log-out"
+              class="nav-link d-block d-sm-none my-hover-enlarge log-out"
+              data-url="../index.html"
               >Log-out</a
             >
           </li>
@@ -103,7 +105,7 @@
       <h1 class="fw-bolder">John Doe</h1>
       <h2 class="fw-italic">Drums</h2>
       <img
-        src="//img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?t=st=1709563197~exp=1709566797~hmac=b689e5e177c3d6c62da590cd067d75d9ba4e97609d314b94de53d37a913bf5a5&w=740"
+        src="/images/Avatar_default.png"
         alt="A default profile avatar"
         class="rounded-circle img-fluid col-lg-2 col-md-4 col-sm-2 border-info img-thumbnail float-end border-4 border-info"
       />
