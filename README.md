@@ -1,7 +1,7 @@
 # JS2
 
-![alt text](/images/Screen2.png)
 ![alt text](/images/Screen1-min.png)
+![alt text](/images/Screen2.png)
 
 The Musync Community Site is a gathering place where musicians can connect with others who are seeking to play music together.
 
