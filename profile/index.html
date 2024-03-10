@@ -7,10 +7,11 @@
       <meta charset="UTF-8" />
       <meta
         name="description"
-        content="Profile page belonging to a Musync user"
+        content="Profile page belonging to a Musync user. Musync is the number one community for musicians"
       />
       <meta name="keywords" content="Meeting-place, Music, SoMe" />
       <meta name="author" content="Alex Storm Skoglund" />
+      <link rel="icon" href="/images/musync_fav.jpg" type="image/x-icon" />
     </head>
     <title>Musync | Profile</title>
     <link rel="stylesheet" href="/dist/css/index.css" />
@@ -26,33 +27,13 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script defer type="module" src="/profile/profile.mjs"></script>
   </head>
   <header class="container-fluid border border-5 border-info p-3">
     <div class="container-fluid">
-      <a href="../index.html">
-        <!-- This is from Bootstrap icons -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="56"
-          height="56"
-          fill="black"
-          class="bi bi-box-arrow-left float-end mt-5 mr-4 d-none d-sm-block"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
-          />
-          <path
-            fill-rule="evenodd"
-            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
-          />
-        </svg>
-      </a>
-
       <img
-        src="/images/User_main.jpg"
-        alt="An image of a male with dark red hair and beard"
+        src="/images/Avatar_default.png"
+        alt="A default profile avatar"
         class="rounded-circle float-end col-1"
       />
     </div>
@@ -68,20 +49,23 @@
         <ul class="navbar-nav m-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a
-              class="nav-link active"
+              class="nav-link active text-info my-hover-enlarge"
               aria-current="page"
               href="/profile/index.html"
               >Profile</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../feed/index.html">Feed</a>
+            <a class="nav-link my-hover-enlarge" href="../feed/index.html"
+              >Feed</a
+            >
           </li>
           <li class="nav-item">
             <a
-              class="nav-link d-sm-block d-md-none d-lg-none"
-              href="../index.html"
-              >Log-out</a
+              id="log-out"
+              class="nav-link my-hover-enlarge"
+              data-url="/index.html"
+              >Log-Out</a
             >
           </li>
         </ul>
@@ -90,14 +74,21 @@
   </header>
   <body class="bg-secondary">
     <!-- main profile-container -->
+    <div class="m-3 card bg-info">
+      <p class="text-center p-5 fw-bold text-white">
+        &#128679; "We apologize for the inconvenience, but this section of the
+        website is currently undergoing construction. Please visit us again
+        soon!" &#128679;
+      </p>
+    </div>
     <div
-      class="container mt-5 mb-5 100vh bg-primary justify-content-between align-items-center col-sm-10 col-md-8 col-lg-5 border-rounded clearfix rounded-5 p-3 box-shadow"
+      class="container opacity-25 mt-5 mb-5 100vh bg-primary justify-content-between align-items-center col-sm-10 col-md-8 col-lg-5 border-rounded clearfix rounded-5 p-3 box-shadow"
     >
       <h1 class="fw-bolder">John Doe</h1>
       <h2 class="fw-italic">Drums</h2>
       <img
-        src="/images/User_main.jpg"
-        alt="A profile picture of a man with red hair and beard"
+        src="/images/Avatar_default.png"
+        alt="A default profile avatar"
         class="rounded-circle img-fluid col-lg-2 col-md-4 col-sm-2 border-info img-thumbnail float-end border-4 border-info"
       />
       <p class="fw-bolder mt-5">Online</p>
@@ -230,7 +221,13 @@
     </div>
     <footer class="text-center border border-5 border-info">
       &copy2024
-      <div><h5 class="display-6">*musync*</h5></div>
+      <div>
+        <img
+          src="/images/_musync_.png"
+          alt="A logo in bold letters, it spells *musync*"
+          class="col-2"
+        />
+      </div>
     </footer>
   </body>
 </html>

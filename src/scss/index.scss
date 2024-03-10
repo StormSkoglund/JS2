@@ -22,15 +22,34 @@ $color: #332348;
   box-shadow: $shadow1 $shadow2 $shadow3 $shadow4 $color;
 }
 
+$shadow-light1: 1px;
+$shadow-light2: 6px;
+$shadow-light3: 10px;
+$shadow-light4: 2px;
+$color-light: #5e5965;
+
+.box-shadow-light {
+  box-shadow: $shadow-light1 $shadow-light2 $shadow-light3 $shadow-light4
+    $color-light;
+}
+
 $border-radius1: 58px;
 $border-radius2: 5px;
 
-.my-border {
-  border-radius: $border-radius1;
+@include media-breakpoint-up(sm) {
+  .my-md-border {
+    border-radius: $border-radius1;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .my-sm-border {
+    border-radius: $border-radius2;
+  }
 }
 
 $form-border: 5px;
-$form-size: 1.5rem;
+$form-size: 0.2rem;
 $form-border-thickness: 3px;
 $form-type: solid;
 $form-border-color: #3590d2;
@@ -43,7 +62,7 @@ $form-border-color: #3590d2;
   border-radius: $border-radius2;
 }
 
-$form-size-min: 0.5rem;
+$form-size-min: 0.3rem;
 
 .my-form-min {
   padding: $form-size-min;
@@ -51,4 +70,14 @@ $form-size-min: 0.5rem;
   border-width: $form-border-thickness;
   border-color: $form-border-color;
   border-radius: $border-radius2;
+}
+
+$link-decoration: none;
+
+.my-hover-enlarge {
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

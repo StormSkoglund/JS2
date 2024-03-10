@@ -11859,12 +11859,22 @@ textarea.form-control-lg {
   box-shadow: 2px 12px 4.4px 0px #332348;
 }
 
-.my-border {
-  border-radius: 58px;
+.box-shadow-light {
+  box-shadow: 1px 6px 10px 2px #5e5965;
 }
 
+@media (min-width: 576px) {
+  .my-md-border {
+    border-radius: 58px;
+  }
+}
+@media (min-width: 576px) {
+  .my-sm-border {
+    border-radius: 5px;
+  }
+}
 .my-form {
-  padding: 1.5rem;
+  padding: 0.2rem;
   border: solid;
   border-width: 3px;
   border-color: #3590d2;
@@ -11872,11 +11882,18 @@ textarea.form-control-lg {
 }
 
 .my-form-min {
-  padding: 0.5rem;
+  padding: 0.3rem;
   border: solid;
   border-width: 3px;
   border-color: #3590d2;
   border-radius: 5px;
+}
+
+.my-hover-enlarge {
+  transition: transform 0.1s;
+}
+.my-hover-enlarge:hover {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=index.css.map */

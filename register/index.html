@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Here you login to the social media platform Musync, a meeting-place for musicians"
+      content="Create your own user account on Musync, a meeting place for musicians."
     />
     <meta name="keywords" content="Meeting-place, Music, SoMe" />
     <link rel="icon" href="/images/musync_fav.jpg" type="image/x-icon" />
-    <link rel="stylesheet" href="./dist/css/index.css" />
+    <link rel="stylesheet" href="/dist/css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,48 +22,49 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="/JavaScript/login.js"></script>
-    <script type="module" src="/JavaScript/modules/inputs.mjs"></script>
-    <script type="module" src="/JavaScript/modules/noRefresh.mjs"></script>
-    <script type="module" src="/JavaScript/modules/error.mjs"></script>
-    <title>Musync | Login</title>
+    <script type="module" defer src="/register/register.mjs"></script>
+    <script type="module" defer src="/JavaScript/modules/inputs.mjs"></script>
+    <script
+      type="module"
+      defer
+      src="/JavaScript/modules/noRefresh.mjs"
+    ></script>
+    <script type="module" defer src="/JavaScript/modules/error.mjs"></script>
+    <script
+      type="module"
+      defer
+      src="/JavaScript/modules/displayFunction.mjs"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="/JavaScript/modules/API/fetchContent.mjs"
+    ></script>
+
+    <title>Musync | Register User</title>
   </head>
   <body class="bg-secondary m-0">
     <div
-      class="container d-flex flex-column flex-lg-row justify-content-between min-vh-100"
+      class="container-lg d-flex flex-column flex-lg-row justify-content-between vh-100"
     >
-      <div
-        class="card h-sm-75 h-lg-50 col-12 col-md-12 col-lg-4 bg-primary m-auto mb-3 m-md-3 box-shadow my-border p-2"
+      <!-- login -->
+      <section
+        class="p-sm-2 p-md-5 card h-l-50 bg-primary m-3 box-shadow my-md-border col-md-12 position-relative clearfix"
       >
         <img
-          src="images/_musync_.png"
-          class="mx-auto mt-3 mb-3 col-10"
-          alt="The logo of this site it spells musync"
+          src="/images/_musync_.png"
+          class="m-auto mb-1 mt-1 col-6"
+          alt="The logo of this site. It spells musync"
         />
-        <p class="text-center fw-bolder lead">
+        <h1 class="d-none d-md-block fs-3 text-muted text-center">
           Musicians' collaboration platform. Find like-minded musicians. Join
           now.
-        </p>
-        <a
-          href="/register/index.html"
-          class="btn btn-info text-white fw-bold d-flex mx-auto text-center"
-          >Create an account</a
-        >
-        <p class="d-none d-sm-block text-center mt-3 text">
-          If you're a musician seeking to expand your network and explore new
-          possibilities, this platform is an ideal resource for you. Join today
-          and discover the many opportunities that await you.
-        </p>
-      </div>
-      <!-- login -->
-      <div
-        class="p-3 card h-auto col-12 col-md-12 col-lg-8 bg-primary m-auto m-md-3 box-shadow my-border"
-      >
-        <h1 class="display-6">Login</h1>
-        <div class="text-center text-danger bg-white" id="errorContainer"></div>
+        </h1>
+        <h2 class="fs-5 text-center">Create new account</h2>
+
         <form id="form" class="form-group">
           <div>
-            <label for="userName">Enter username</label>
+            <label for="userName">Choose a username</label>
             <input
               class="my-form d-flex align-items-end form-control"
               type="text"
@@ -86,13 +87,13 @@
               name="inputMail"
               pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
               placeholder="example@noroff.no or @stud.noroff.no"
-              title="Only emails from @noroff.no and @stud.noroff.no accepted."
+              title="Only @noroff.no and @stud.noroff.no emails accepted"
               autocomplete="email"
               required
             />
           </div>
           <div>
-            <label for="inputPass">Password</label>
+            <label for="inputPass">Choose a strong password</label>
             <input
               type="password"
               class="my-form d-flex align-items-end form-control"
@@ -101,33 +102,21 @@
               placeholder="Enter password"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="For security reasons, your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
-              autocomplete="current-password"
+              autocomplete="new-password"
               required
             />
           </div>
-
           <button
             class="btn btn-info m-2 text-white fw-bold d-flex float-center float-md-end"
             type="submit"
             id="formButton"
             name="formButton"
           >
-            ENTER
+            Create User
           </button>
-          <img
-            src="images/MusicAI_1-min.png"
-            alt="Two male musicians, playing side by side on stage"
-            class="d-none d-lg-block col-lg-6 float-end"
-          />
         </form>
-        <div>
-          <a
-            href=""
-            class="bg-primary btn border-dark text-dark text-center fw-bold"
-            >Forgot your password?</a
-          >
-        </div>
-      </div>
+        <div class="text-center text-danger bg-white" id="errorContainer"></div>
+      </section>
     </div>
     <footer
       class="container-fluid border border-info border-5 text-center p-2 mb-0 mt-5"
