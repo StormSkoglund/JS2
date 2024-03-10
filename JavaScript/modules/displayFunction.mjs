@@ -107,7 +107,7 @@ export async function displayContent(url) {
 
 export async function displaySinglePost(url) {
   const post = await fetchAuthorized(url);
-  console.log(post);
+
   try {
     let fetchedMedia = post.media || consts.DEFAULT_IMAGE_URL;
     let fetchedAvatar = post.author.avatar || consts.DEFAULT_IMAGE_AVATAR_URL;

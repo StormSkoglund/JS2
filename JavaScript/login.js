@@ -20,7 +20,7 @@ async function loginUser(url, data) {
       body: JSON.stringify(data),
     };
     const response = await fetch(url, postData);
-    console.log(response);
+
     if (response.ok) {
       window.location.href = "/feed/index.html";
     } else {
@@ -37,7 +37,6 @@ async function loginUser(url, data) {
       })
     );
 
-    console.log(json);
     return json;
   } catch (error) {
     tryCatchError(error.message);
@@ -54,7 +53,7 @@ function login() {
     email: `${mailValue}`,
     password: `${passwordValue}`,
   };
-  console.log(user);
+
   loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, user);
 }
 

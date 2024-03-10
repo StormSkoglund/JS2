@@ -21,7 +21,7 @@ async function registerUser(url, data) {
     };
 
     const response = await fetch(url, postData);
-    console.log(response);
+
     const json = await response.json();
     if (response.ok) {
       //redirect to login page
@@ -40,7 +40,6 @@ async function registerUser(url, data) {
       throw new Error();
     }
 
-    console.log(json);
     return json;
   } catch (error) {
     tryCatchError(error.message);
@@ -59,7 +58,7 @@ function getInputs() {
     email: `${mailValue}`,
     password: `${passwordValue}`,
   };
-  console.log(user);
+
   registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
 }
 

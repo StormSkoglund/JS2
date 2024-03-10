@@ -34,7 +34,6 @@ consts.dropDate.addEventListener("change", async function () {
 // Search function Demonstrated by Martin Krüger on February 27, 2024. Adapted to suit my API call and content rendering.
 
 async function displayContentFiltered(posts, userInput = "") {
-  console.log(userInput);
   try {
     posts = await fetchAuthorized(API_BASE_URL + endpointsCombined);
     consts.displayFeed.innerHTML = "";

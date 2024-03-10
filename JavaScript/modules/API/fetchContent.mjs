@@ -11,9 +11,9 @@ export async function fetchAuthorized(url) {
       },
     };
     const response = await fetch(url, getData);
-    console.log(response);
+
     const json = await response.json();
-    console.log(json);
+
     consts.displayFeed.innerHTML = "";
     const posts = json;
     return posts;

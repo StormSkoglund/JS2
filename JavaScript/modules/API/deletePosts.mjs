@@ -28,7 +28,6 @@ export async function deletePost(url, event) {
     } else {
       alert("You can't delete other users post!");
     }
-    console.log(response);
   } catch (error) {
     tryCatchError(error);
   }
