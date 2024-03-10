@@ -1,0 +1,23 @@
+import * as consts from "../consts.mjs";
+import { tryCatchError } from "../error.mjs";
+
+export async function fetchAuthorized(url) {
+  try {
+    const getData = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${consts.token}`,
+      },
+    };
+    const response = await fetch(url, getData);
+
+    const json = await response.json();
+
+    consts.displayFeed.innerHTML = "";
+    const posts = json;
+    return posts;
+  } catch (error) {
+    tryCatchError(error);
+  }
+}

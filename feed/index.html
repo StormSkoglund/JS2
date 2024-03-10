@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is the landing-page for the Musync social media site, and collaborative community"
+    />
+    <meta name="keywords" content="Meeting-place, Music, SoMe" />
+    <meta name="author" content="Alex Storm Skoglund" />
+    <link rel="icon" href="/images/musync_fav.jpg" type="image/x-icon" />
+    <title>Musync | Feed</title>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monofett&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="/feed/fetchFeed.js"></script>
+    <script
+      defer
+      type="module"
+      src="/JavaScript/modules/noRefresh.mjs"
+    ></script>
+    <script defer type="module" src="/JavaScript/modules/consts.mjs"></script>
+  </head>
+  <header class="container-fluid border border-5 border-info p-3">
+    <img
+      src="/images/Avatar_default.png"
+      alt="A default profile avatar"
+      class="rounded-circle float-end col-1"
+    /><!-- This is Bootstrap icons -->
+
+    <img
+      src="/images/_musync_.png"
+      alt="A logo in bold letters, it spells *musync*"
+      class="col-3"
+    />
+
+    <nav class="navbar navbar-expand-lg bg-secondary display-6">
+      <div class="container-fluid">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link my-hover-enlarge" href="../profile/index.html"
+              >Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-info my-hover-enlarge"
+              aria-current="page"
+              href="/feed/index.html"
+              >Feed</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              id="log-out"
+              class="nav-link my-hover-enlarge"
+              data-url="/index.html"
+              >Log-Out</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <body class="bg-secondary">
+    <div
+      class="d-flex flex-column flex-sm-row justify-content-between align-items-start m-3"
+    >
+      <!-- Upload section -->
+
+      <div
+        class="card my-border border-rounded border-3 border-info h-25 bg-secondary p-3 mt-5 col-12 col-sm-5 position-sticky top-0"
+      >
+        <h1 class="lead fw-bold text-center">Hi there!</h1>
+        <img
+          src="/images/Avatar_default.png"
+          alt="A default profile avatar"
+          class="rounded-circle img-fluid col-5 col-md-4 border-info img-thumbnail d-block m-auto border-4 border-info"
+        />
+        <div class="form-group row-lg-3 row-sm-2 d-block col-8 m-auto">
+          <h2>What’s on your mind?</h2>
+          <form class="form-group" id="postForm">
+            <label for="title">Subject</label>
+            <input
+              type="text"
+              class="my-form form-control"
+              name="title"
+              id="title"
+              maxlength="40"
+            />
+            <label for="body">Message</label>
+            <textarea
+              class="my-form form-control"
+              id="body"
+              rows="3"
+              maxlength="250"
+            ></textarea>
+            <label for="image">Paste image URL here: </label>
+            <input type="text" class="my-form form-control" id="image" />
+            <label for="tags">Tags seperated by comma: </label>
+            <input
+              type="text"
+              class="my-form form-control"
+              name="tags"
+              id="tags"
+            />
+            <button
+              class="bolder btn btn-info mt-3"
+              id="postButton"
+              type="button"
+            >
+              Submit Post
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Feed section -->
+      <div class="mt-5 col-12 col-sm-6">
+        <div class="container-half card my-border box-shadow bg-primary">
+          <h6 class="fw-bold text-center fs-1">
+            Newsfeed from your community!
+          </h6>
+          <label for="dropDown" class="fw-bolder fs-6 m-1"
+            >Filter by date:</label
+          >
+          <select class="my-form p-2 border-info" id="dropDown">
+            <option value="1" id="select1" selected="true">
+              Latest posts first
+            </option>
+            <option value="2" id="select2">Oldest posts first</option>
+          </select>
+          <div id="errorContainer"></div>
+          <hr />
+          <form class="form-inline my-2 my-lg-0 clearfix">
+            <label for="search" class="fw-bolder fs-6 m-1">Search Posts:</label>
+            <input
+              class="form-control border-info mr-sm-1 my-form"
+              type="text"
+              id="search"
+              placeholder="Search"
+            />
+            <button
+              class="bolder btn btn-info m-2 float-end"
+              id="searchBtn"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+          <hr />
+          <div
+            id="feedContainer"
+            class="m-3 h-75 card bg-primary pb-5 p-1"
+          ></div>
+          <hr />
+        </div>
+      </div>
+    </div>
+    <footer class="text-center border border-5 border-info">
+      &copy2024
+      <div>
+        <img
+          src="/images/_musync_.png"
+          alt="A logo in bold letters, it spells *musync*"
+          class="col-2"
+        />
+      </div>
+    </footer>
+  </body>
+</html>

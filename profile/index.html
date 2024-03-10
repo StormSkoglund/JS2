@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+      <meta charset="UTF-8" />
+      <meta
+        name="description"
+        content="Profile page belonging to a Musync user. Musync is the number one community for musicians"
+      />
+      <meta name="keywords" content="Meeting-place, Music, SoMe" />
+      <meta name="author" content="Alex Storm Skoglund" />
+      <link rel="icon" href="/images/musync_fav.jpg" type="image/x-icon" />
+    </head>
+    <title>Musync | Profile</title>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monofett&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="/profile/profile.mjs"></script>
+  </head>
+  <header class="container-fluid border border-5 border-info p-3">
+    <div class="container-fluid">
+      <img
+        src="/images/Avatar_default.png"
+        alt="A default profile avatar"
+        class="rounded-circle float-end col-1"
+      />
+    </div>
+
+    <img
+      src="/images/_musync_.png"
+      alt="A logo in bold letters, it spells *musync*"
+      class="col-3"
+    />
+
+    <nav class="navbar navbar-expand-lg bg-secondary display-6">
+      <div class="container-fluid">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-info my-hover-enlarge"
+              aria-current="page"
+              href="/profile/index.html"
+              >Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link my-hover-enlarge" href="../feed/index.html"
+              >Feed</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              id="log-out"
+              class="nav-link my-hover-enlarge"
+              data-url="/index.html"
+              >Log-Out</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <body class="bg-secondary">
+    <!-- main profile-container -->
+    <div class="m-3 card bg-info">
+      <p class="text-center p-5 fw-bold text-white">
+        &#128679; "We apologize for the inconvenience, but this section of the
+        website is currently undergoing construction. Please visit us again
+        soon!" &#128679;
+      </p>
+    </div>
+    <div
+      class="container opacity-25 mt-5 mb-5 100vh bg-primary justify-content-between align-items-center col-sm-10 col-md-8 col-lg-5 border-rounded clearfix rounded-5 p-3 box-shadow"
+    >
+      <h1 class="fw-bolder">John Doe</h1>
+      <h2 class="fw-italic">Drums</h2>
+      <img
+        src="/images/Avatar_default.png"
+        alt="A default profile avatar"
+        class="rounded-circle img-fluid col-lg-2 col-md-4 col-sm-2 border-info img-thumbnail float-end border-4 border-info"
+      />
+      <p class="fw-bolder mt-5">Online</p>
+      <p class="fw-bolder mt-0">Vestland, Norway</p>
+      <div class="d-inline-flex">
+        <button type="button" class="btn p-2 btn-info">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-person-add"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+            />
+            <path
+              d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"
+            />
+          </svg>
+          <p class="fw-bold">Follow</p>
+        </button>
+      </div>
+      <hr />
+      <div>
+        <h3 class="mt-2">Followers</h3>
+        <p class="fw-bold mt-2">Friend: 3</p>
+        <p class="fw-bold mt-2">Online: 3</p>
+      </div>
+      <div>
+        <hr />
+        <p class="lead fw-bold">Posts by this user</p>
+        <select class="border-2 border-info">
+          <option selected="">List of posts</option>
+          <option value="1">Recent post</option>
+          <option value="2">Archived posts</option>
+        </select>
+        <hr />
+      </div>
+      <div class="mw-25">
+        <h3 class="fw-stronger">Update Bio:</h3>
+        <textarea class="my-form" id="message" rows="3"></textarea>
+      </div>
+      <form method="post">
+        <h4 class="fw-bolder">What is your main instrument?</h4>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument1"
+            name="intrument1"
+            class="custom-control-input"
+            checked=""
+          />
+          <label class="custom-control-label" for="intrument1">Vocals</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument2"
+            name="intrument2"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="intrument2">Piano</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument3"
+            name="intrument3"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="intrument3">Drums</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument4"
+            name="intrument4"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="intrument4"
+            >Acoustic guitar</label
+          >
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument5"
+            name="intrument5"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="intrument5"
+            >Electric guitar</label
+          >
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument6"
+            name="intrument6"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="intrument6"
+            >Acoustic bass</label
+          >
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument7"
+            name="intrument7"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="intrument7"
+            >Electric bass</label
+          >
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="intrument8"
+            name="intrument8"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="intrument8">Other</label>
+        </div>
+        <button class="btn btn-info float-end">Save</button>
+      </form>
+    </div>
+    <footer class="text-center border border-5 border-info">
+      &copy2024
+      <div>
+        <img
+          src="/images/_musync_.png"
+          alt="A logo in bold letters, it spells *musync*"
+          class="col-2"
+        />
+      </div>
+    </footer>
+  </body>
+</html>
