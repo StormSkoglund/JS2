@@ -17,6 +17,19 @@ async function fillFormBeforeUpdate() {
   const post = await displaySinglePost(
     API_BASE_URL + socialEndpoint + consts.id + authorEndpoint
   );
+  const userId = localStorage.getItem("userProfile");
+  console.log(userId);
+
+  const formattedUserId = JSON.parse(userId);
+
+  const userMailId = formattedUserId.userMail;
+
+  if (userMailId !== post.author.email) {
+    form.style.display = "none";
+    console.log(JSON.stringify(post.author) + JSON.stringify(formattedUserId));
+  } else {
+    form.style.display = "block";
+  }
 
   console.log(form);
   form.title.value = post.title;
