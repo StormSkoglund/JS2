@@ -1,4 +1,4 @@
-import { logOut } from "../JavaScript/modules/logOut.mjs";
+import { logOut } from "../JavaScript/modules/logoutUser.mjs";
 import { userLogsOut } from "../JavaScript/modules/consts.mjs";
 
 //log-out!

@@ -7,7 +7,7 @@ import * as consts from "../../JavaScript/modules/consts.mjs";
 import { displaySinglePost } from "../../JavaScript/modules/displayFunction.mjs";
 import { deletePost } from "../../JavaScript/modules/API/deletePosts.mjs";
 import { updatePost } from "../../JavaScript/modules/API/updatePosts.mjs";
-import { logOut } from "../../JavaScript/modules/logOut.mjs";
+import { logOut } from "../../JavaScript/modules/logoutUser.mjs";
 
 const form = document.getElementById("formEdit");
 

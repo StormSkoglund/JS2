@@ -14,4 +14,4 @@ export const dropDate = document.getElementById("dropDown");
 export const queryString = document.location.search;
 export const parameters = new URLSearchParams(queryString);
 export const id = parameters.get("id");
-export const userLogsOut = document.querySelector(".log-out");
+export const userLogsOut = document.getElementById("log-out");
