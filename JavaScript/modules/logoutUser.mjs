@@ -1,5 +1,3 @@
-import { userLogsOut } from "./consts.mjs";
-
 // Logs out the user
 
 export function logOut(event) {

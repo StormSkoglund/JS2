@@ -3,8 +3,6 @@ import { displayContent } from "../JavaScript/modules/displayFunction.mjs";
 import { fetchAuthorized } from "../JavaScript/modules/API/fetchContent.mjs";
 import { API_BASE_URL } from "../JavaScript/modules/inputs.mjs";
 import { endpointsCombined } from "../JavaScript/modules/inputs.mjs";
-import { authorEndpoint } from "../JavaScript/modules/inputs.mjs";
-import { socialEndpoint } from "../JavaScript/modules/inputs.mjs";
 import { postContent } from "../JavaScript/modules/API/post.mjs";
 import { tryCatchError } from "../JavaScript/modules/error.mjs";
 import { logOut } from "../JavaScript/modules/logoutUser.mjs";

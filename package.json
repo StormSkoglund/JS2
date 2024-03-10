@@ -1,6 +1,6 @@
 {
   "name": "js2",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A course assignment in JavaScript, I am adding functionality to a social media website.",
   "main": "index.js",
   "scripts": {
@@ -22,9 +22,9 @@
   "author": "Alex Storm Skoglund <alesko52196@stud.noroff.no>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/StormSkoglund/css-frameworks-ca/issues"
+    "url": "https://github.com/StormSkoglund/JS2/issues"
   },
-  "homepage": "https://github.com/StormSkoglund/css-frameworks-ca#readme",
+  "homepage": "https://github.com/StormSkoglund/JS2#readme",
   "dependencies": {
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3"
